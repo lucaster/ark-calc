@@ -7,19 +7,19 @@ case class Combo(val hits: List[Hit] = Nil) {
   /**
    * Current total ark
    */
-  def ark: Int = Combo.ark(hits).toInt
+  def ark = Combo.ark(hits).toInt
 
   /**
    * Combo ark if the hit were added.
    */
-  def ark(candidate: Hit): Int = Combo.ark(hits :+ candidate).toInt;
+  def ark(candidate: Hit) = Combo.ark(hits :+ candidate).toInt;
 
   /**
    * Appends the hit at the end of the Combo.
    *
    * @return a new Combo instance
    */
-  def append(hit: Hit): Combo = copy(hits :+ hit)
+  def append(hit: Hit) = copy(hits :+ hit)
 }
 case object Combo {
   def sum(hits: List[Hit]) = hits.map(_.damage).sum * hits.map(_.multiplier).sum
