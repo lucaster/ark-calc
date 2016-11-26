@@ -21,4 +21,19 @@ class TwoComboSpec extends FunSpec {
       assert(combo.ark === 25);
     }
   }
+  
+  describe("A 2 x SpringFloor (Perfect Aim) Combo") {
+
+    val hit1, hit2 = new Hit(SpringFloor, 0.1);
+    
+    val combo = new Combo(List(hit1, hit2));
+
+    it("has two hits") {
+      assert(2 === combo.hits.size);
+    }
+    
+    it("has 8 ark") {
+      assert(combo.ark === 8);
+    }
+  }
 }
