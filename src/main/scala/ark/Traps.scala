@@ -18,6 +18,7 @@ sealed trait Trap {
   def damage: Int
   def multiplier: BigDecimal
   def `type`: TrapType
+  def points: Int
 }
 object Trap {
   import TrapType._
@@ -25,7 +26,9 @@ object Trap {
   sealed abstract class BaseTrap(val damage: Int,
                                  val multiplier: BigDecimal,
                                  val `type`: TrapType,
-                                 val category: TrapCategory) extends Trap
-  case object SpringFloor extends BaseTrap(5, 0.7, Elaborate, Floor)
-  case object PushWall extends BaseTrap(5, 1.2, Elaborate, Wall)
+                                 val category: TrapCategory,
+                                 val points: Int) extends Trap
+  case object Boulder extends BaseTrap(50, 0.9, Elaborate, Ceiling, 80)
+  case object Springboard extends BaseTrap(5, 0.7, Elaborate, Floor, 50)
+  case object WallNudge extends BaseTrap(5, 1.2, Elaborate, Wall, 65)
 }

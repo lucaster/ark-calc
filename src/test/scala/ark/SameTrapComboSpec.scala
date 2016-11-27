@@ -10,7 +10,7 @@ class SameTrapComboSpec extends FunSpec {
 
     val n = 15;
 
-    val hits = (1 to n).toList.map(_ => new Hit(SpringFloor, 0.1));
+    val hits = (1 to n).toList.map(_ => new Hit(Springboard, 0.1));
 
     val combo = new Combo(hits);
 

@@ -8,7 +8,7 @@ class OneComboSpec extends FunSpec {
 
   describe("An one hit Combo") {
 
-    val hit = new Hit(SpringFloor, 0.1);
+    val hit = new Hit(Springboard, 0.1);
     val combo = new Combo(List(hit));
 
     it("has one hit") {

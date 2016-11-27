@@ -24,7 +24,7 @@ class EmptyComboSpec extends FunSpec {
     
     describe("When is added a hit") {
       // Act
-      val newCombo = combo.append(new Hit(SpringFloor));
+      val newCombo = combo.append(new Hit(Springboard));
       
       it("returns a new instance") {
         // Assert

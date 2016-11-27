@@ -8,7 +8,7 @@ class ThreeComboSpec extends FunSpec {
   
   describe("A 3 x SpringFloor (Perfect Aim) Combo") {
 
-    val hit1, hit2, hit3 = new Hit(SpringFloor, 0.1);
+    val hit1, hit2, hit3 = new Hit(Springboard, 0.1);
     
     val combo = new Combo(List(hit1, hit2, hit3));
 
