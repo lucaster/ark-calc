@@ -1,0 +1,1602 @@
+Deception IV - Trap List (for PS3/Vita)
+Version 1.02 (Last update on 10/22/2014)
+Created by Garamoth
+Contact: ernestpworell@hotmail.com
+
+===============================================================================
+= (01) Table of contents                                                      = 
+===============================================================================
+
+(01) Table of content
+(02) Introduction/Updates
+(03) General Info
+(04) Ceiling Traps
+(05) Wall Traps
+(06) Floor Traps
+(07) Scoring
+(08) Strategies/tips
+(09) Contributions/Legal Terms
+
+===============================================================================
+= (02) Introduction/Updates                                                   = 
+===============================================================================
+
+---------------------------
+Version update             
+---------------------------
+
+Version 1.02 - 10/22/2014
+-- Finally got around to completing all the missions (I've been busy 
+elsewhere). I've added the basics of scoring in a new section and a few other 
+additions.
+
+Version 1.01 - 08/28/2014
+-- Quick update because some characters turned out wrong during file 
+conversion. A few other corrections and a few new tips for traps.
+
+Version 1.00 - 08/06/2014
+-- First full version. I'm still missing info on the five DLC traps (2 Japan-
+only, 3 pre-order)none of which I have. Anyone feel like giving me a code?
+
+---------------------------
+Introduction
+---------------------------
+
+This guide is for Deception IV: Blood Ties (a.k.a Kagero: Dark Side Princess) 
+on PS3 and Vita. 
+
+I've decided to write this guide because many of the traps have hidden 
+qualities/drawbacks that the game doesn't make clear. This includes some of 
+life's greatest questions: "can this trap actually hit an enemy on the floor?" 
+and "which way will my target face after this trap?"
+
+Well, after a lot of testing in Free Battle mode on Anna the archer (God bless 
+her soul), I have answers.
+
+===============================================================================
+= (03) General info                                                           = 
+===============================================================================
+
+Just in case you don't know the terminology of the Deception series, here are 
+the basics:
+
+Ark         - Basically, your score. A function of damage dealt and 
+              trap multipliers. Also used for some challenges.
+
+Warl        - Basically, money. Awarded according to Ark.
+
+TYPE points - Determines the ELABORATE/SADISTIC/HUMILIATING value of a combo.
+              Also used for some challenges.
+
+TYPE Exp.   - Determines which ELABORATE/SADISTIC/HUMILIATING traps you 
+              can buy. Awarded according to TYPE points.
+
+
+Here are the three trap types. Each trap belongs to one of the three types:
+
+- ELABORATE traps are usually blunt and do low to medium damage. Contains lots 
+of good traps for moving targets around.
+
+- SADISTIC traps use spikes and blades and have high damage. Good for finishing 
+off targets quickly.
+
+- HUMILIATING traps are usually worthy of Wile E. Coyote's gag arsenal. They 
+also usually have low damage.
+
+***
+
+To better understand the following list, here is an example of trap data:
+
+-----------------------------------------
+Trap name
+-----------------------------------------
+Type               - Determines if enemy will be resistant/weak to this 
+                     trap (if "None", no one is immune)
+Damage             - By how much the trap reduces enemy Hp
+Charge             - How many seconds after setup the trap can be sprung
+Ark multiplier     - Adds how much to the Ark multiplier. Can be increased 
+                     on some traps
+TYPE points        - How many base ELABORATE/SADISTIC/HUMILIATING points 
+                     the trap is worth
+
+Effects: Which special effects the trap has.
+Upgrade: Which special effect this trap will have after upgrade.
+
+Description: Official in-game description.
+
+Notes: My tips and tricks for this trap.
+
+***
+
+
+The different possible trap effects are:
+
+
+Trap effect			Description
+-------------------------------------------------------------------------------
+Binds for x sec.      - Keeps target on the spot for x sec.
+-------------------------------------------------------------------------------
+Draws Victim In       - Pulls target to grid square the trap is on (or against 
+                        the wall for wall traps).
+-------------------------------------------------------------------------------
+Electric              - Target moves a bit more slowly.
+-------------------------------------------------------------------------------
+Enraging              - Target temporarily loses "Resistant" attributes 
+                        and will only run at you and use melee attacks for 
+                        a few seconds.
+-------------------------------------------------------------------------------
+Enveloping            - Boulder carries target with it to its destination.
+-------------------------------------------------------------------------------
+Fire                  - Can be used after Oil to set target on fire.
+-------------------------------------------------------------------------------
+Flammable             - Can be set on fire by another trap.
+-------------------------------------------------------------------------------
+Ice                   - Freezes target in the position it is currently in.
+-------------------------------------------------------------------------------
+Ignores Defenses      - This trap always does full damage (Enemy Defense = 0).
+-------------------------------------------------------------------------------
+Knocks into the Wall  - Knocks target into the opposing wall, no matter 
+                        the distance.
+-------------------------------------------------------------------------------
+Moves Along the Floor - Follows the elevation of the floor (not necessarily 
+                        on the ground).
+-------------------------------------------------------------------------------
+Oil                   - Target will start burning if hit with a Fire trap 
+                        and take extra damage gradually.
+-------------------------------------------------------------------------------
+Piercing              - Can go through targets and hit more than one.
+-------------------------------------------------------------------------------
+Push x squares        - Moves target x squares. Direction and exact 
+                        results depend on trap.
+-------------------------------------------------------------------------------
+Slow                  - Slows down target considerably.
+-------------------------------------------------------------------------------
+x sec. of Suction     - Sucks target against trap for x sec.
+-------------------------------------------------------------------------------
+x Stage Hit           - Hits x times as a part of its normal operation.
+-------------------------------------------------------------------------------
+yx Reflex(es)         - Can bounce off walls up to y times.
+-------------------------------------------------------------------------------
+
+
+
+These effects only appear on stage traps:
+-------------------------------------------------------------------------------
+Cannot be reused         - Trap only activates once.
+-------------------------------------------------------------------------------
+Capture		         - Enemy with 0 Hp or red Hp bar is captured alive.
+-------------------------------------------------------------------------------
+Proximity Sensor         - Trap activates itself when a target enters its 	
+		           radius.
+-------------------------------------------------------------------------------
+Recovery     	         - Heals your wounds. Only works on the player.
+-------------------------------------------------------------------------------
+Special Movement    	 - Trap works in some other unique way.
+-------------------------------------------------------------------------------
+Switch-activated         - Activated by touching a crystal personally or with 
+	                   another trap.
+-------------------------------------------------------------------------------
+
+
+
+Upgrading a trap adds one of these effects:
+-------------------------------------------------------------------------------
+Bonus Ark                  - Flat 0.2 bonus to the trap's Ark multiplier.
+-------------------------------------------------------------------------------
++ Aerial Hit bonus         - Extra bonus when achieving an "Aerial Hit" with 
+                             this trap.
+-------------------------------------------------------------------------------
++ Death by Tombstone bonus - Extra bonus for killing a target (Hp becomes 0)   
+	                     with the Tombstone.
+-------------------------------------------------------------------------------
++ Exact Damage bonus       - Extra bonus when achieving "Exact Damage" with 
+                             this trap.
+-------------------------------------------------------------------------------
++ Long Range Hit bonus     - Extra bonus when achieving "Long Range Hit" 
+                             with this trap.
+-------------------------------------------------------------------------------
++ Perfect Aim bonus        - Extra bonus when achieving "Perfect Aim" with 
+                             this trap.
+-------------------------------------------------------------------------------
++ Rapid Fire bonus         - Extra bonus when achieving "Rapid Fire" with 
+                             this trap.
+-------------------------------------------------------------------------------
+
+(You can only upgrade traps once you've bought all of them.)
+
+
+
+===============================================================================
+= (04) Ceiling Traps                                                          = 
+===============================================================================
+
+-----------------------------------------
+Boulder
+-----------------------------------------
+Type               - Boulder
+Damage             - 50
+Charge             - 8 sec.
+Ark multiplier     - 0.9 -> 1.1
+ELABORATE points   - 70
+
+Effects: Piercing
+Upgrade: Bonus Ark
+
+Description: An enormous rock comes crashing down, crushing the hapless human 
+underneath.
+
+Notes: The boulder will start rolling on its own if used on a slope. It can 
+also be manipulated by other traps to change its direction (ex: Springboard, 
+Wall Nudge). This gives the "Trap Chain" combo bonus.
+
+The Boulder flattens the enemy on the spot, which means you need to know when 
+it will hit to keep your combo going. Note that some of the early Daemon 
+Requests want to you use a Boulder trap. They're talking about this trap, not 
+any trap in the boulder category.
+
+-----------------------------------------
+Iron Ball
+-----------------------------------------
+Type               - Boulder
+Damage             - 60
+Charge             - 10 sec.
+Ark multiplier     - 0.8
+ELABORATE points   - 80
+
+Effects: Piercing, Push 4 squares, 2x Reflexes
+Upgrade: + Long Range Hit bonus
+
+Description: An enormous iron ball comes crashing down, crushing the hapless 
+human underneath.
+
+Notes: Creates a lot of chaos, but very hard to use with precision. Sends 
+targets flying almost randomly depending on exact hit angle and can bounce a 
+few times depending on momentum. Enemies seem terrible at dodging the Iron 
+Ball's bounces and can be hit multiple times.
+
+-----------------------------------------
+Flaming Boulder
+-----------------------------------------
+Type               - Fire, Boulder
+Damage             - 65
+Charge             - 8 sec.
+Ark multiplier     - 0.7
+ELABORATE points   - 75
+
+Effects: Piercing, Fire
+Upgrade: + Perfect Aim bonus
+
+Description: A flaming rock comes crashing down, crushing the hapless human 
+underneath and setting them alight.
+
+Notes: Flattens targets on the spot. Despite description, doesn't actually set 
+targets on fire.
+
+-----------------------------------------
+Snowball
+-----------------------------------------
+Type               - Boulder
+Damage             - 20
+Charge             - 9 sec.
+Ark multiplier     - 1.1 -> 1.3
+HUMILIATING points - 55
+
+Effects: Enveloping
+Upgrade: Bonus Ark
+
+Description: An enormous snowball comes crashing down, enveloping the hapless 
+human underneath.
+
+Notes: Enveloping means the Snowball will carry the target with it to its 
+destination. Target will stay put if the Snowball does not roll.
+
+Despite appearances, is not actually ice-related. Weakest of the boulders. Very 
+useful for setting up armor breaks without killing the target.
+
+-----------------------------------------
+Spiked Ball
+-----------------------------------------
+Type                - Boulder
+Damage              - 70
+Charge              - 11 sec.
+Ark multiplier      - 0.7
+SADISTIC points     - 90
+
+Effects: Enveloping
+Upgrade: + Aerial Hit bonus
+
+Description: A spiked iron ball comes crashing down, impaling the hapless human 
+underneath.
+
+Notes: Fantastic trap. The most damaging trap, directly anyway. Great for 
+quickly wiping out enemies. Enveloping makes it easy to combo into something 
+else, since the target will either stay put if the ball doesn't roll or will 
+end where the ball stops if it does roll.
+
+-----------------------------------------
+Washbin
+-----------------------------------------
+Type               - Enraging
+Damage             - 7
+Charge             - 3 sec.
+Ark multiplier     - 2.4
+HUMILIATING points - 90
+
+Effects: Piercing, Fire
+Upgrade: + Perfect Aim bonus
+
+Description: A washbin comes crashing down, enraging the human victim.
+
+Notes: Second best Ark multiplier and high Humiliating score, but awkward to 
+use. Enrages foes. Unlike pots, the Washbin almost always hits an enemy as long 
+as it's roughly on the grid square. Doesn't make enemy fall down or stop him 
+much, so window for combo is very small, less than a second.
+
+-----------------------------------------
+Vase
+-----------------------------------------
+Type               - Covers Head
+Damage             - 1
+Charge             - 3 sec.
+Ark multiplier     - 1.0
+ELABORATE points   - 70
+
+Effects: Push 4 squares
+Upgrade: + Perfect Aim bonus
+
+Description: A vase falls on top of the victim's head, rendering them unable to 
+see.
+
+Notes: Fastest charging of the pots, so it can easily be added into an ongoing 
+combo. Target hit walks around very slowly, so the delay can be used to set up 
+even more new traps.
+
+Direction of pushing depends on the target's facing when hit, but only in 4 
+directions. Target will keep walking into a wall if it reaches one. Finicky to 
+use, as the target must be centered on the grid square and there is a slight 
+delay for the Vase to fall down.
+
+-----------------------------------------
+Oil Bottle
+-----------------------------------------
+Type               - Oil, Covers Head
+Damage             - 3
+Charge             - 6 sec.
+Ark multiplier     - 1.0 -> 1.2
+ELABORATE points   - 65
+
+Effects: Push 4 squares, Oil
+Upgrade: Bonus Ark
+
+Description: An oil bottle renders the victim blind, and covers them in oil.
+
+Notes: Mostly like the Vase, but with a better Ark multiplier once upgraded.
+Oil status will be inflicted as soon as pot hits.
+
+Can also be used on empty ground to create an oil spill. The first target to 
+walk on the spill will slip like on the Banana Peel: half-second stun and push 
+one square in 8 directions depending on facing. It will also be inflicted the 
+Oil status.
+
+-----------------------------------------
+Pumpkin Mask
+-----------------------------------------
+Type               - Covers Head
+Damage             - 1
+Charge             - 7 sec.
+Ark multiplier     - 1.0
+HUMILIATING points - 65 
+
+Effects: Push 4 squares
+Upgrade: + Perfect Aim bonus
+
+Description: A pumpkin falls on top of the victim's head, rendering them unable 
+to see.
+
+Notes: Pretty much a Humiliating variant of the Vase. Takes more than twice as 
+long to charge, though, without any apparent advantage to compensate.
+
+-----------------------------------------
+Agony Mask
+-----------------------------------------
+Type               - Electric, Covers Head
+Damage             - 45
+Charge             - 6 sec.
+Ark multiplier     - 0.9 -> 1.1
+SADISTIC points    - 95
+
+Effects: Push 2 squares, Electric
+Upgrade: Bonus Ark
+
+Description: A torture mask renders the victim blind, and subjects them to 
+painful electric shocks.
+
+Notes: Very high Sadistic score, but pushes only 2 squares. Unlike other head 
+pots, this one hurts a lot.
+
+-----------------------------------------
+Swinging Axe
+-----------------------------------------
+Type               - Ceiling
+Damage             - 45
+Charge             - 5 sec.
+Ark multiplier     - 0.9
+SADISTIC points    - 60
+
+Effects: Push 3 squares
+Upgrade: + Aerial Hit bonus
+
+Description: A pendulum-like swinging axe slices through the victim.
+
+Notes: Well-rounded, but also complicated to use. Hits three grid squares, but 
+cannot hit a target on the ground unless it is on the center square. For the 
+other two squares, it helps if the target is pinned standing up by another 
+trap.
+
+The game's prediction of trajectory is only valid if the target is hit on the 
+activation symbol. Will actually send the target one square further than shown 
+if it is hit on the last square the axe hits. Likewise, will send the target 
+one square closer if it is hit by the first square the axe hits.
+
+After the first swing, the axe goes back and forward for a second time, so it 
+can be set up to hit multiple times, but can also mess up combos. Can also 
+swing right by the target if not centered correctly. On top of that, it also 
+has a tendency to fail by being blocked by another trap or the environment.
+
+As one puzzle mission illustrates, the Swinging Axe can also hit beyond the 
+indicated range if the target is in midair, but that's really more of a stunt 
+than a practical feature.
+
+-----------------------------------------
+Swinging Hammer
+-----------------------------------------
+Type               - Ceiling
+Damage             - 20
+Charge             - 3 sec.
+Ark multiplier     - 0.9 -> 1.1
+ELABORATE points   - 55
+
+Effects: Push 4 squares
+Upgrade: Bonus Ark
+
+Description: A swinging hammer knocks the victim off their feet and sends them 
+flying.
+
+Notes: Simpler version of the Swinging Axe. Also sends target closer/further 
+depending on which square it hits on. Swings only once, so creates less chaos. 
+Can hit targets on the ground on its last square but it's not always foolproof.
+
+-----------------------------------------
+Evil Strike
+-----------------------------------------
+Type               - None
+Damage             - 35
+Charge             - 8 sec.
+Ark multiplier     - 0.8 -> 1.0
+ELABORATE points   - 66
+
+Effects: Knocks into the Wall, Ignores Defenses
+Upgrade: Bonus Ark
+
+Description: The Devil's foot kicks the human victim, sending them flying.
+
+Notes: The foolproof version of the Swinging Axe. Has no type, so no enemy is 
+immune. Knocks target straight into the opposing wall no matter where the 
+target is hit, so requires no calculations. Can hit on the ground on every 
+square.
+
+Ignores armor, so always does decent damage. Decent Ark multiplier. Also 
+excellent as an armor-breaking finisher that sends the enemy flying into the 
+air. What's not to love? Probably the best trap in the game, so never start a 
+mission without this one!
+
+Evil Strike and all the devil-themed "Evil" traps give 66 TYPE points... 
+because it's the devil. 666, get it?
+
+-----------------------------------------
+Needle Nasty
+-----------------------------------------
+Type               - Ceiling
+Damage             - 55
+Charge             - 10 sec.
+Ark multiplier     - 1.0
+SADISTIC points    - 70
+
+Effects: Ignores Defenses
+Upgrade: + Perfect Aim bonus
+
+Description: A ceiling studded with needles descends from above, impaling the 
+hapless human beneath.
+
+Notes: Only hits its square and does nothing special. Good for damaging armored 
+enemies.
+
+-----------------------------------------
+Claw
+-----------------------------------------
+Type               - Ceiling
+Damage             - 15
+Charge             - 5 sec.
+Ark multiplier     - 1.7 -> 1.9
+ELABORATE points   - 85
+
+Effects: Binds for 3 sec., Push 1 square
+Upgrade: Bonus Ark
+
+Description: The victim is picked up by a claw and carried through the air.
+
+Notes: Can't hit a target on the ground and it's finicky about centering the 
+target on the grid. Good Ark multiplier and Elaborate points. Can be used to 
+drop down a target over a railing.
+
+-----------------------------------------
+Circular Saw
+-----------------------------------------
+Type               - Ceiling
+Damage             - 10 (x4)
+Charge             - 5 sec.
+Ark multiplier     - 0.5
+SADISTIC points    - 75
+
+Effects: Push 2 squares, 4 Stage Hit
+Upgrade: + Perfect Aim bonus
+
+Description: A circular saw descends from above, tearing the victim to shreds.
+
+Notes: Excellent and easy to use. Normally hits 4 times, so great for boosting 
+the number of hits in a combo and an instant "Multi-hit" bonus. Hits targets on 
+the ground. Barely does any damage to an armored target, since the damage is 
+split between the 4 hits.
+
+-----------------------------------------
+Tombstone
+-----------------------------------------
+Type               - Boulder
+Damage             - 44
+Charge             - 8 sec.
+Ark multiplier     - 0.9
+HUMILIATING points - 60 
+
+Effects: None
+Upgrade: + Death by Tombstone bonus
+
+Description: A tombstone comes crashing down, squashing the hapless human 
+underneath.
+
+Notes: Gives the unique combo bonus "Death by Tombstone" if the Tombstone 
+reduces the target's Hp to 0. Now that's painful irony!
+
+Pretty damaging for a Humiliating trap. Despite being a boulder, cannot roll 
+and just flattens the target on the spot.
+
+Does 44 damage, a reference to the fact that the number 4 is associated to 
+death in Asian cultures.
+
+-----------------------------------------
+Evil Stomp
+-----------------------------------------
+Type               - None
+Damage             - 50
+Charge             - 10 sec.
+Ark multiplier     - 1.0 -> 1.2
+HUMILIATING points - 66 
+
+Effects: Ignores Defenses
+Upgrade: Bonus Ark
+
+Description: The human victim is squashed by the foot of the Devil himself.
+
+Notes: Excellent, like all the devil traps. Hits two squares, so great for 
+hitting something on a square grid that already has another trap on it.
+
+Pins the target on the ground for a few seconds. Has a tendency to get in the 
+way of other traps, so wait for the foot to disappear before activating the 
+next trap in a combo.
+
+-----------------------------------------
+Buzzsaw
+-----------------------------------------
+Type               - Ceiling
+Damage             - 35
+Charge             - 6 sec.
+Ark multiplier     - 0.8
+SADISTIC points    - 50
+
+Effects: Push 2 squares
+Upgrade: + Perfect Aim bonus
+
+Description: An enormous circular saw comes crashing down, then continues to 
+roll along the floor.
+
+Notes: Rolls until it hits an obstacle. Hits target on the ground. It can be 
+used to set up an easy "Long Range Hit". Pushes 2 square forward, but only from 
+where the target is hit.
+
+-----------------------------------------
+Mega Yo-Yo
+-----------------------------------------
+Type               - None
+Damage             - 30
+Charge             - 9 sec.
+Ark multiplier     - 0.6
+HUMILIATING points - 50 
+
+Effects: Push 3 squares
+Upgrade: + Exact Damage bonus
+
+Description: An enormous yo-yo rolls along the floor.
+
+Notes: A cousin of the Swinging Axe and Swinging Hammer. Useful for its ability 
+to bypass immunities. Can hit targets on the ground, but it's not foolproof, 
+especially on the first square.
+
+Like the other swinging traps, the distance pushed depends on which square the 
+target is hit on. The game's prediction is only valid if the target is hit on 
+the activation symbol.
+
+===============================================================================
+= (05) Wall Traps                                                             = 
+===============================================================================
+
+-----------------------------------------
+Arrow Slit
+-----------------------------------------
+Type               - Projectile
+Damage             - 25
+Charge             - 2 sec.
+Ark multiplier     - 2.5 -> 2.7
+ELABORATE points   - 90
+
+Effects: None
+Upgrade: Bonus Ark
+
+Description: An arrow is fired out of a slit in the wall.
+
+Notes: Has the best Ark multiplier in the game. An obvious candidate for a 
+"Long Range Hit", but it's easy to miss. Travel time and the narrow projectile 
+have to be taken into account. Can't hit anything on the ground either. It is 
+one of the fastest traps with its 2 sec. charge time, however.
+
+-----------------------------------------
+Frozen Arrow
+-----------------------------------------
+Type               - Ice, Projectile
+Damage             - 20
+Charge             - 3 sec.
+Ark multiplier     - 2.0
+ELABORATE points   - 75
+
+Effects: Ice
+Upgrade: + Perfect Aim bonus
+
+Description: An icy arrow that freezes its human victim is fired out of a slit 
+in the wall.
+
+Notes: The only ice trap in your arsenal. Freezes the target in its current 
+position, can be useful to keep a target standing up. After being frozen for a 
+few seconds, the target will continue doing whatever it was doing (like 
+wandering around under the effect of a Vice Grip) provided it is not hit by 
+another trap. Otherwise acts as a regular arrow.
+
+Can be used for a Sadistic Daemon Request on mission 10/11.
+
+-----------------------------------------
+Fireball
+-----------------------------------------
+Type               - Fire, Projectile
+Damage             - 35
+Charge             - 3 sec.
+Ark multiplier     - 1.8 -> 2.0
+ELABORATE points   - 85
+
+Effects: Moves Along the Floor
+Upgrade: Bonus Ark
+
+Description: Balls of flame are fired from the wall towards the victim.
+
+Notes: Unlike other arrows, it follows the ground up and down stairs.
+It still hovers a few feet above ground, so it doesn't actually hit targets 
+lying down, even on stairs. Doesn't set targets on fire on its own either.
+
+-----------------------------------------
+Lightning Spear
+-----------------------------------------
+Type               - Electric, Projectile
+Damage             - 45
+Charge             - 4 sec.
+Ark multiplier     - 1.4 -> 1.6
+ELABORATE points   - 95
+
+Effects: Piercing, Electric
+Upgrade: Bonus Ark
+
+Description: A spear engulfed in lightning pierces the victim.
+
+Notes: Unlike other arrows, can hit multiple targets. Slows them down a little 
+bit too.
+
+-----------------------------------------
+Gatling Arrows
+-----------------------------------------
+Type               - Projectile
+Damage             - 12 (x5)
+Charge             - 5 sec.
+Ark multiplier     - 1.0
+SADISTIC points    - 55
+
+Effects: 5 Stage Hit
+Upgrade: + Long Range Hit bonus
+
+Description: Countless arrows are fired out of the wall, piercing the victim.
+
+Notes: Shoots five arrows for five hits. Great for increasing the number of 
+hits in a combo, but like most arrows, it is difficult to aim and chain into 
+another trap.
+
+-----------------------------------------
+Brutal Buzzsaw
+-----------------------------------------
+Type               - Projectile
+Damage             - 30
+Charge             - 4 sec.
+Ark multiplier     - 1.0
+SADISTIC points    - 65
+
+Effects: Moves Along the Floor, Knocks into the Wall
+Upgrade: + Perfect Aim bonus
+
+Description: A circular saw forces the victim towards the wall.
+
+Notes: Knocks target all the way to the opposing wall. Like the Fireball, 
+travels up and down stairs, but doesn't actually hit anything on the ground.
+
+-----------------------------------------
+Sticky Arrow
+-----------------------------------------
+Type               - Projectile
+Damage             - 3
+Charge             - 5 sec.
+Ark multiplier     - 0.7
+HUMILIATING points - 70
+
+Effects: Moves Along the Floor, Knocks into the Wall
+Upgrade: + Perfect Aim bonus
+
+Description: An arrow fitted with a suction pas draws the victim towards the 
+wall.
+
+Notes: The anti-Buzzsaw. Drags target back to the point of origin. Doesn't hit 
+anything on the floor and doesn't move up or down stairs.
+
+-----------------------------------------
+Cake in the Face
+-----------------------------------------
+Type               - None
+Damage             - 1
+Charge             - 3 sec.
+Ark multiplier     - 2.0
+HUMILIATING points - 95
+
+Effects: Push 3 squares
+Upgrade: + Long Range Hit bonus
+
+Description: A cake is launched at the victim's face, rendering them unable to 
+see.
+
+Notes: If hit from the front or sides, the target will walk blindly (like with 
+head pots) three squares towards the point of origin. They are not kidding 
+about the face part: if hit from behind, the target is hurt, but not blinded.
+
+-----------------------------------------
+Rolling Bomb
+-----------------------------------------
+Type               - Fire
+Damage             - 55
+Charge             - 6 sec.
+Ark multiplier     - 1.2
+ELABORATE points   - 100
+
+Effects: Push 2 squares, Fire
+Upgrade: + Long Range Hit bonus
+
+Description: A bomb rolls out of the wall. It explodes when it makes contact 
+with its victim.
+
+Notes: Rolls very slowly. Explodes upon hit, sending target flying away 
+randomly. Like boulders, it can pick up speed by rolling down stairs. Can't go 
+up stairs and will instead roll back to its point of origin. Unlike boulders, 
+it can't be made to change direction with another trap. Can't actually hit 
+something on the floor on the square next to the wall.
+
+This is the trap that's worth the most elaborate points.
+
+-----------------------------------------
+Wall Nudge
+-----------------------------------------
+Type               - Wall
+Damage             - 5
+Charge             - 4 sec.
+Ark multiplier     - 1.2
+ELABORATE points   - 65
+
+Effects: Push 2 squares
+Upgrade: + Perfect Aim bonus
+
+Description: The wall juts out, giving humans standing in front of it a shove.
+
+Notes: Extremely useful placement trap. Good for keeping target alive and good 
+Ark multiplier as well. Target will fall lying down 3 squares from the wall. 
+Depending on how it was hit, the target will either face the wall or away from 
+the wall, but not sideways.
+
+-----------------------------------------
+Wall Smash
+-----------------------------------------
+Type               - Wall
+Damage             - 15
+Charge             - 6 sec.
+Ark multiplier     - 1.4
+ELABORATE points   - 70
+
+Effects: Push 6 squares
+Upgrade: + Rapid Fire bonus
+
+Description: The wall itself slams into the victim, sending them flying.
+
+Notes: The more aggressive sibling of the Wall Nudge. Will send the target 
+flying one square further if it is hit by the tip of the wall.
+
+-----------------------------------------
+Evil Smash
+-----------------------------------------
+Type               - None
+Damage             - 40
+Charge             - 5 sec.
+Ark multiplier     - 1.0 -> 1.2
+ELABORATE points   - 66
+
+Effects: Knocks into the Wall, Ignores Defenses
+Upgrade: Bonus Ark
+
+Description: The fist of the Devil himself knocks the victim flying into the 
+Wall.
+
+Notes: Very useful, like all Devil traps. Hits targets up to 3 squares away, 
+unlike the previous two wall traps that have a range of 2. Despite what it 
+might look like, it hits targets on the floor.
+
+-----------------------------------------
+Nerve Gas
+-----------------------------------------
+Type               - Slow
+Damage             - 3
+Charge             - 8 sec.
+Ark multiplier     - 0.7 -> 0.9
+ELABORATE points   - 50
+
+Effects: Slow, Flammable
+Upgrade: Bonus Ark
+
+Description: A gas that slows down human movement is released from the wall.
+
+Notes: An odd duck. Slows enemies to a crawl in a huge 3x3 square in front of 
+the wall. Lingers for a few seconds after activation, so don't step in that 
+area.
+
+Any Fire trap (ex: Fireball, Hotplate) that enters or is activated in this 
+radius will create a fabulous explosion sending all targets flying and cause 
+around 50 damage. Combine with Hellfire for a gigantic explosion worth more 
+than 120 points of damage.
+
+Setting the gas on fire counts as a "Trap Chain" combo bonus.
+
+-----------------------------------------
+Mallet
+-----------------------------------------
+Type               - Wall
+Damage             - 7
+Charge             - 5 sec.
+Ark multiplier     - 1.3 -> 1.5
+HUMILIATING points - 70
+
+Effects: Push 1 square
+Upgrade: Bonus Ark
+
+Description: The victim is struck with a toy hammer.
+
+Notes: Sends target 1 space left or right. Target will end facing either left 
+or right of the wall, depending on facing when hit. Can actually hit a target 
+on the ground. Barely stuns target (less than a second), so make sure you 
+quickly activate the next trap to maintain your combo.
+
+-----------------------------------------
+Reaper's Scythe
+-----------------------------------------
+Type               - Wall
+Damage             - 50
+Charge             - 8 sec.
+Ark multiplier     - 0.9 -> 1.1
+SADISTIC points    - 70
+
+Effects: Push 2 squares
+Upgrade: Bonus Ark
+
+Description: The Grim Reaper's scythe slices through the victim.
+
+Notes: The nastier version of the mallet. Sends target 2 spaces left or right. 
+Can hit targets on the floor.
+
+-----------------------------------------
+Vacuum Wall
+-----------------------------------------
+Type               - Vacuum
+Damage             - 1
+Charge             - 5 sec.
+Ark multiplier     - 0.6
+ELABORATE points   - 55
+
+Effects: 4 sec. of Suction
+Upgrade: + Perfect Aim bonus
+
+Description: A powerful fan sucks the victim towards the wall, and keeps them 
+stuck there.
+
+Notes: Sucks in a straight line from up to 3 squares away. Target sucked will 
+stay pinned to the wall until trap ends, then falls to the floor. Useful for 
+buying time and keeping target alive for something else.
+
+-----------------------------------------
+Deadly Fan
+-----------------------------------------
+Type               - Vacuum, Wall
+Damage             - 45
+Charge             - 7 sec.
+Ark multiplier     - 0.4
+SADISTIC points    - 85
+
+Effects: 4 sec. of Suction
+Upgrade: + Exact Damage bonus
+
+Description: A bladed propeller sucks victims towards it before slicing them to 
+shreds.
+
+Notes: A nastier version of the Vacuum Wall, but only sucks from 2 spaces away. 
+Has the lowest Ark multiplier.
+
+-----------------------------------------
+Lethal Lance
+-----------------------------------------
+Type               - Wall
+Damage             - 40
+Charge             - 5 sec.
+Ark multiplier     - 0.5
+SADISTIC points    - 55
+
+Effects: Draws Victim In
+Upgrade: + Aerial hit bonus
+
+Description: The victim is skewered by a spear and dragged towards the wall.
+
+Notes: Extremely useful trap. Target will get drawn against the wall from up to 
+2 spaces away, and fall down on the floor. Target will always end up facing 
+away from the wall. Activates at lightning speed, so it can be used to guard 2 
+spaces wide areas and set up further traps.
+
+-----------------------------------------
+Maiden's Embrace
+-----------------------------------------
+Type               - None
+Damage             - 60
+Charge             - 6 sec.
+Ark multiplier     - 0.8
+SADISTIC points    - 100
+
+Effects: Binds for 3 sec., Ignores Defenses
+Upgrade: + Perfect Aim Bonus
+
+Description: The victim is crushed by a mobile iron maiden.
+
+Notes: One of the nastiest high damage traps. It's also the most sadistic trap, 
+the one worth the most points. Kind of picky, though. Will "eat" a standing 
+target from up to 2 spaces away from the wall and will spit it back out 2 
+spaces away. Target eaten will always exit facing away from the wall. Can 
+actually eat three targets at once.
+
+Won't eat a target lying down and will just push it 3 squares from the wall.
+
+===============================================================================
+= (06) Floor Traps                                                            = 
+===============================================================================
+
+-----------------------------------------
+Bear Trap
+-----------------------------------------
+Type               - Clamping
+Damage             - 15
+Charge             - 4 sec.
+Ark multiplier     - 0.8
+ELABORATE points   - 65
+
+Effects: Binds for 4 sec.
+Upgrade: + Rapid Fire bonus
+
+Description: The victim's legs are caught in a giant bear trap.
+
+Notes: Simple and easy to use, but outclassed by the Vice Grip. Unlike the Vice 
+Grip or the Rake, the Bear Trap has to be sprung at exactly the right moment.
+
+-----------------------------------------
+Bloody Scissors
+-----------------------------------------
+Type               - Clamping
+Damage             - 50
+Charge             - 7 sec.
+Ark multiplier     - 0.6
+SADISTIC points    - 80
+
+Effects: Binds for 1 sec.
+Upgrade: + Exact Damage bonus
+
+Description: Enormous scissors emerge from the floor to slice through the 
+victim.
+
+Notes: The sadistic version of the Bear Trap. This trap can be rotated.
+Has the unique property of sending target half a square in the chosen 
+direction. The target will then fall down, sprawled between two squares.
+
+-----------------------------------------
+Hanging Chains
+-----------------------------------------
+Type               - Clamping
+Damage             - 15
+Charge             - 8 sec.
+Ark multiplier     - 0.7
+ELABORATE points   - 60
+
+Effects: Binds for 6 sec.
+Upgrade: + Rapid Fire bonus
+
+Description: The victim is bound in chains and hung upside down.
+
+Notes: Keeps target hanging in the air for a long time. Hitting the hanging 
+target counts as an "Aerial hit". Can be a good setup for an arrow slit.
+
+-----------------------------------------
+Vice Grip
+-----------------------------------------
+Type               - Clamping
+Damage             - 10
+Charge             - 8 sec.
+Ark multiplier     - 0.9 -> 1.1
+HUMILIATING points - 65
+
+Effects: Binds target for 3 sec., Push 1 square
+Upgrade: Bonus Ark
+
+Description: The victim's feet are held in place while they are spun around 
+quickly and made to feel dizzy.
+
+Notes: One of the best binding/setup traps. Will not hit targets on the corners 
+of the grid square, but the timing is pretty generous. After spinning for a few 
+seconds, target will walk very slowly one square forward and fall down one 
+square to the left. It's easy to hit an enemy with a trap that needs a standing 
+target while it is walking slowly. It's also an excellent way to decide which 
+direction the target will be facing for future traps. Affects targets for an 
+extremely long time (more than the 3 sec. stated above), enough to recreate a 
+whole new trap setup before they recover.
+
+It's a shame many targets are immune to it.
+
+-----------------------------------------
+Springboard
+-----------------------------------------
+Type               - Floor
+Damage             - 5
+Charge             - 4 sec.
+Ark multiplier     - 0.7
+ELABORATE points   - 50
+
+Effects: Push 3 squares
+Upgrade: + Rapid Fire bonus
+
+Description: Sends victim flying in a direction of your choice.
+
+Notes: Another classic setup trap. Covers the entire grid square, so very easy 
+to aim. Despite the description, this trap cannot break armor "by sending the 
+victim flying".
+
+-----------------------------------------
+Super Springboard
+-----------------------------------------
+Type               - Floor
+Damage             - 10
+Charge             - 6 sec.
+Ark multiplier     - 0.8 -> 1.0
+ELABORATE points   - 55
+
+Effects: Push 6 squares
+Upgrade: Bonus Ark
+
+Description: Sends the victim flying even further.
+
+Notes: Pretty much a souped-up Springboard. The extra Ark multiplier can make a 
+difference, though.
+
+-----------------------------------------
+Human Cannon
+-----------------------------------------
+Type               - Floor
+Damage             - 30
+Charge             - 7 sec.
+Ark multiplier     - 0.7 -> 0.9
+HUMILIATING points - 80
+
+Effects: Knocks into the Wall
+Upgrade: Bonus Ark
+
+Description: The victim is stuffed into an enormous cannon and fired into the 
+air.
+
+Notes: Unique in that it shoots the target diagonally up. Can be used to hit 
+higher stage traps or bypass low walls.
+
+-----------------------------------------
+Blast Bomb
+-----------------------------------------
+Type               - Fire
+Damage             - 50
+Charge             - 3 sec.
+Ark multiplier     - 1.2
+ELABORATE points   - 90
+
+Effects: Push 2 squares, Fire
+Upgrade: + Rapid Fire bonus
+
+Description: The ground explodes, sending the victim flying.
+
+Notes: Very fast charge for a 50 damage trap. However, it hits only one square 
+and sends the target flying in an unpredictable pattern. Doesn't actually set 
+the target on fire.
+
+-----------------------------------------
+Spark Rod
+-----------------------------------------
+Type               - Electric
+Damage             - 35
+Charge             - 5 sec.
+Ark multiplier     - 0.6 -> 0.8
+ELABORATE points   - 60
+
+Effects: Binds for 3 sec., Electric
+Upgrade: Bonus Ark
+
+Description: An electrical charge surrounds this trap, giving the victim a 
+nasty shock.
+
+Notes: An excellent way to start a combo, as very few enemies are immune to 
+electricity. Also keeps target standing up. It can hit multiple targets at 
+once, unlike another good combo starter, the Delta Horse. However, unlike the 
+Delta Horse, it doesn't center the targets on the grid.
+
+-----------------------------------------
+Launchpad
+-----------------------------------------
+Type               - Floor
+Damage             - 25
+Charge             - 4 sec.
+Ark multiplier     - 1.1
+ELABORATE points   - 80
+
+Effects: 2 Stage Hit
+Upgrade: + Perfect Aim bonus
+
+Description: A spring-loaded floor launches the victim high into the air.
+
+Notes: Target will fly straight up, hit the ceiling and come back down on the 
+same spot. An instant 2-hit combo. Falling down will also cause damage, but is 
+not considered a hit. Almost always gives a "High Fall" combo bonus.
+
+-----------------------------------------
+Hellfire
+-----------------------------------------
+Type               - Fire
+Damage             - 65
+Charge             - 7 sec.
+Ark multiplier     - 1.0
+SADISTIC points    - 75
+
+Effects: Push 3 squares, Fire
+Upgrade: + Aerial Hit bonus
+
+Description: A column of fire sends the victim high into the air.
+
+Notes: Oh yes. The strongest damage trap. Burns everyone in a huge 3x3 square 
+and sends them flying. Unlike every other fire trap, actually sets targets on 
+fire on its own (and also adds "Burning Up" combo bonus). This means the trap 
+does more than the 65 damage listed. Burning targets will also run around 
+harmlessly for a few seconds.
+
+If this trap has one drawback, it's that it's almost impossible to predict 
+where targets will land.
+
+A must for killing multiple enemies quickly.
+
+-----------------------------------------
+Evil Punch
+-----------------------------------------
+Type               - None
+Damage             - 20
+Charge             - 6 sec.
+Ark multiplier     - 1.0 -> 1.2
+ELABORATE points   - 66
+
+Effects: 2 Stage Hit, Ignores Defenses
+Upgrade: Bonus Ark
+
+Description: The Devil's fist knocks the victim high into the air.
+
+Notes: Another excellent devil trap. A better version of the Launchpad. Will 
+actually send the target flying 2 squares forward. Despite appearances, can be 
+rotated during setup. Can be used to reach cages high up.
+
+Almost guarantees multiple combo bonuses: "Long Range Hit", "Aerial Hit", 
+"Multi-Hit" and "High Fall".
+
+-----------------------------------------
+Shark Blade
+-----------------------------------------
+Type               - Floor
+Damage             - 25
+Charge             - 8 sec.
+Ark multiplier     - 1.0
+SADISTIC points    - 50
+
+Effects: 1x Reflex
+Upgrade: + Long Range Hit bonus
+
+Description: A protruding blade darts across the floor, before turning around 
+and returning to its starting point.
+
+Notes: Basically hits the wall it is facing, turns around and stops after 
+hitting the opposite wall. Can easily be set up to hit twice. Can also move 
+up/down stairs.
+
+-----------------------------------------
+Banana Peel
+-----------------------------------------
+Type               - Floor
+Damage             - 5
+Charge             - 1 sec.
+Ark multiplier     - 1.3 -> 1.5
+HUMILIATING points - 100
+
+Effects: Push 1 square
+Upgrade: Bonus Ark
+
+Description: The hapless victim slips on a banana peel.
+
+Notes: The fastest charging trap, but hard to use. The target can slip in any 
+direction and gets back up instantly. The highest-scoring humiliating trap, for 
+obvious reasons.
+
+-----------------------------------------
+Iron Rake
+-----------------------------------------
+Type               - Enraging
+Damage             - 10
+Charge             - 6 sec.
+Ark multiplier     - 0.7
+HUMILIATING points - 75
+
+Effects: Push 1 square, Enraging
+Upgrade: + Perfect Aim bonus
+
+Description: The victim steps on a rake, smacking themselves in the face with 
+the handle.
+
+Notes: Another classic prank trap. Easy to use, as it lingers for a little 
+while after activation. Target will fall down after moving 1 square, either 
+facing the direction it came from or facing away from it, depending on facing 
+when hit.
+
+-----------------------------------------
+Delta Horse
+-----------------------------------------
+Type               - None
+Damage             - 30
+Charge             - 6 sec.
+Ark multiplier     - 0.6
+HUMILIATING points - 85
+
+Effects: Binds for 3 sec., Ignores Defenses
+Upgrade: + Exact Damage bonus
+
+Description: A wooden horse that rises up to attack from underneath the victim.
+
+Notes: An excellent combo starter. Hits from anywhere in the square and places 
+the target dead center of that square. It's even better that no enemy can 
+resist the Delta Horse. Can only hit one target at a time, though.
+
+Also, some traps are stopped by the horse (especially the head). This is made 
+even worse by the fact that the orientation of the horse is random each time 
+it's activated. The target does stay stunned for a few seconds even after the 
+horse disappears, so that's the best time to hit.
+
+-----------------------------------------
+Hotplate
+-----------------------------------------
+Type               - Fire, Floor
+Damage             - 40
+Charge             - 7 sec.
+Ark multiplier     - 0.7
+HUMILIATING points - 85
+
+Effects: Binds for 3 sec., Push 2 squares, Fire
+Upgrade: + Rapid Fire bonus
+
+Description: The floor turns into a hotplate, scorching the victim's feet.
+
+Notes: Target will jump 2 squares away in one of 4 directions, the one it was 
+facing when hit. Good for being both a fire and a floor trap at the same time.
+Also good damage for a humiliating trap.
+
+-----------------------------------------
+Vacuum Floor
+-----------------------------------------
+Type               - Vacuum
+Damage             - 1
+Charge             - 6 sec.
+Ark multiplier     - 0.5
+ELABORATE points   - 50
+
+Effects: 4 sec. of Suction
+Upgrade: + Perfect Aim bonus
+
+Description: A suction vent appears in the floor, sucking the victim towards 
+it.
+
+Notes: Sucks in a huge 3x3 square to the center square. Good if you don't want 
+to harm the target (yet) and are not sure where it will land after being sent 
+flying by another trap.
+
+-----------------------------------------
+Black Hole
+-----------------------------------------
+Type               - Vacuum, Floor
+Damage             - 50
+Charge             - 8 sec.
+Ark multiplier     - 0.4 -> 0.6
+HUMILIATING points - 50
+
+Effects: 4 sec. of Suction
+Upgrade: Bonus Ark
+
+Description: The victim is swallowed by a black hole, the spit out from the 
+ceiling.
+
+Notes: Meaner version of the Vacuum Floor, also in a 3x3 grid. Excellent damage 
+for a humiliating trap. Drops target dead center of the square.
+
+Keeps multiple targets for a very, very long time, so you can set up new traps 
+before it spits targets back out. Also excellent for killing targets even when 
+you don't know where they will land, like after a Hellfire trap.
+
+===============================================================================
+= (07) Scoring                                                                = 
+===============================================================================
+
+Figuring out how the scoring system works is not an easy task, but it is 
+necessary to complete some of the game's hardest objectives.
+
+The first thing to understand is the trap multiplier. Each trap has this 
+number, which multiplies the basic number of points a trap is worth. Those trap 
+multipliers are added together (they don't multiply each other) for each new 
+trap in a combo.
+
+Another multiplier is the bonus multiplier. Those are also given when using 
+traps in specific ways. They also increase the overall multiplier, although the 
+game does not bother to tell you by how much. On top of that, those bonuses are 
+increased when using some upgraded traps (what those values are is not 
+specified either).
+
+Anyway, here is a complete list of the combo bonuses:
+
+Bonus name	        Description
+-------------------------------------------------------------------------------
+Aerial Hit	      - Target is hit in midair.
+-------------------------------------------------------------------------------
+Armor Break           - Break target's armor.
+-------------------------------------------------------------------------------
+Burning Up            - Target is set on fire.
+-------------------------------------------------------------------------------
+Death by Trapmobile   - Target was finished off by a Trapmobile. Sometimes 
+		        requires passing a Quick Time Event.
+-------------------------------------------------------------------------------
+Death by Tombstone    - The Tombstone trap reduced the target's Hp to 0.
+-------------------------------------------------------------------------------
+Exact Damage          - Trap reduces target Hp to 0 and deals no more 	 
+	                than 2 "unnecessary" points of damage.
+-------------------------------------------------------------------------------
+High Fall             - Target took damage from falling down.
+-------------------------------------------------------------------------------
+Long Haul Transit     - Target was hit 10 tiles away from the first trap in the 
+	                combo. Only happens once per combo.
+-------------------------------------------------------------------------------
+Long Range Hit        - Target was hit by a trap 5 tiles or more from the 	
+	                trap's point of origin (usually by a projectile).
+-------------------------------------------------------------------------------
+Multi-hit             - One trap hits the target multiple times. Some traps 
+		        normally do this (ex: Buzzsaw), some can also do it if 
+		        placed just right (ex: Iron Ball).
+-------------------------------------------------------------------------------
+Perfect Aim           - Target is hit in the middle of a tile or hit in the  
+	                middle by a projectile.
+-------------------------------------------------------------------------------
+Rapid Fire            - Activate traps in rapid succession. It seems that it's 
+	                the timing of the activation and not when the target is
+	                hit that counts.
+-------------------------------------------------------------------------------
+Trap Chain            - Modify one trap's effect with another one. Mostly given 
+	                for changing the trajectory of boulders or setting fire 
+	                to Nerve Gas.
+-------------------------------------------------------------------------------
+Weak Point            - Target is hit by a trap his/her armor is weak to.
+-------------------------------------------------------------------------------
+
+With that said, there are two types of score: Ark and 
+ELABORATE/SADISTIC/HUMILIATING points.
+
+
+
+***Ark***
+
+The Combo Ark score is the sum of the Ark score of every hit in the combo.
+
+With that said, the formula for each hit is:
+
+Hit Ark = Cumulative Hp damage dealt at the time of hit * (sum of trap 
+multipliers at the time of hit + sum of bonus multipliers at the time of hit)
+
+
+There are other things to take into account:
+
+- Damage dealt is "real" damage: it is affected by armor (Trap damage - Enemy   
+Armor) and stops increasing when the enemy reaches 0 Hp.
+
+- Hitting an enemy with 0 Hp *will* still increase Ark, because while it will 
+deal no damage, it will increase the multiplier and the previous damage is 
+carried on. This also means that the later hits in the combo are worth more 
+than the previous ones.
+
+- Score will stop increasing if the enemy is hit with the same trap twice (two 
+different stage traps with the same name are okay).
+
+- Score will stop increasing at the 15th hit (and not the 15th trap). Multi-hit 
+traps are a liability in that regard, since they count as more than one hit but 
+apply bonuses only once.
+
+
+
+***TYPE points***
+
+The ELABORATE/SADISTIC/HUMILIATING point score is similar to Ark, but more 
+complicated to calculate.
+
+There is no simple formula, but here are some pointers:
+
+- TYPE score use each trap's TYPE points as the raw value instead of HP damage 
+(for example, the Washbin is worth 90 HUMILIATING points). Like damage for Ark, 
+this value is also cumulative for each type of trap.
+
+- TYPE score is also affected by the multipliers at the moment the trap is used 
+(i.e. traps later in the combo are more valuable).
+
+- Here's the tricky part: the amount of points of each type in a combo is 
+cumulative, but you only get those points once you use another trap of the same 
+type. In practical terms, this means you get a bonus depending on the length of 
+the interval between using two traps of the same type (i.e. using sadistic 
+traps as the first and last trap of a combo will still give an excellent 
+SADISTIC score, despite being used only twice - good to keep in mind for 
+sadistic traps, which deal a lot of damage).
+
+- Unlike Ark, TYPE score will stop increasing completely once enemy HP hits 0.
+
+- The 15 hit/double trap use limits are the same.
+
+
+===============================================================================
+= (08) Strategies/tips                                                        = 
+===============================================================================
+
+--Using Walls--
+
+Having problems figuring out a trap's trajectory with the Swinging Axe, 
+Swinging Hammer, Mega Yo-Yo, etc.? Use the walls!
+
+Targets don't go through walls, so at least you can be sure what square they 
+will end on. It also prevents targets from falling in an awkward spot between 
+two squares. It also sets up the target for a wall trap.
+
+This is even better in a corner, where you can use three different traps on the 
+same grid square (one floor/ceiling & two wall traps).
+
+--Door Cheapness--
+
+Enemies sometimes avoid walking on your traps, but must always step on the grid 
+square right in front of a door. Especially useful with doors 1 square wide.
+
+Put an easy trap to aim that is hard to resist on that spot, like the Delta 
+Horse or the Spark Rod as the first step in a larger combo.
+
+--Stage Traps--
+
+Stage traps are sometimes difficult to use, but almost always have high Ark 
+multipliers, often higher than any trap you can place. The best example is the 
+Event Stage, with the three Exploders worth a whopping 21x.
+
+--Trap Renewal--
+
+There's nothing stopping you from erasing traps that have been used mid-combo 
+to set up new ones further down the line. In fact, it is essential to achieve a 
+very high score.
+
+Note that you can't remove a trap until it is completely gone. It helps a lot 
+to change traps while the target is affected by a trap that lasts a very long 
+time, like the Vice Grip, the Black Hole or most of the pots. You'll also need 
+a moment to find your bearings on your trap order, which will have changed.
+
+--Cycle of Doom--
+
+It's cheap and not really good for score, but you can easily set up a combo 
+that will pin a target indefinitely between 2-3 traps. It is, however, useful 
+to rack up a very high number of hits in a combo.
+
+Easier to do with fast-charging traps.
+
+Ex: Vacuum Wall -> Vice Grip -> Circular Saw
+
+--Quick Death--
+
+Sometimes you just want it done quickly. An Evil Kick, followed by the Spiked 
+Ball, Hellfire and a Black Hole, will finish almost anything instantly and 
+requires very little precision.
+
+Ex: Evil Punch -> Lethal Lance -> Evil Kick -> Spiked Ball -> Hellfire -> Black 
+Hole
+
+--Foolproof Armor Break--
+
+It's not too hard to set up a combo that will hit (almost) every possible 
+weakness.
+
+An enemy's weakness is never part of his Invulnerabilities, which he is 
+completely invincible to as long as he has armor.
+
+There are roughly three types of armored targets: Knights (immune to clamps and 
+projectiles), Soldiers (immune to Head Covering pots and one element, which 
+differs) and bosses (mostly like Knights, but usually with extra 
+invulnerabilities). Soldiers and some bosses have elemental (Ice, Fire, 
+Electric) resistances and weaknesses which defy hard-and-fast setups.
+
+With that said, the following will work for most targets :
+
+For Knights: Spark Rod/Hotplate -> Swinging Hammer -> Lethal Lance -> 
+Springboard -> Vase -> Snowball -> Evil Kick
+
+For Soldiers: Vice Grip -> Swinging Hammer -> Lethal Lance -> Springboard -> 
+Snowball -> Evil Kick
+
+===============================================================================
+= (09) Contributions/Legal Terms                                              = 
+===============================================================================
+
+This guide may not be reproduced under any circumstances except for personal, 
+private use. It may not be placed on any web site or otherwise distributed 
+publicly without advance written permission. Use of this guide on any other web 
+site or as a part of any public display is strictly prohibited, and a violation 
+of copyright.
+
+All trademarks and copyrights contained in this document are owned by their 
+respective trademark and copyright holders.
+
+Copyright (c) 2014 Paul Chenevert
