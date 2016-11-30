@@ -3,7 +3,7 @@ package ark
 sealed trait TrapAlign
 
 object TrapAlign {
-  
+
   case object Elaborate extends TrapAlign
   case object Humiliating extends TrapAlign
   case object Sadistic extends TrapAlign

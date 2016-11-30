@@ -1,7 +1,6 @@
 package ark
 
-import scala.io._
-import java.io._
+import scala.io.Source
 
 object ArkApp extends App {
 

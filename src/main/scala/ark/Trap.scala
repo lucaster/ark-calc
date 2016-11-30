@@ -1,16 +1,21 @@
 package ark
 
 import TrapAlign._
-import TrapType._
 import TrapEffect._
+import TrapType._
 
 sealed trait Trap {
   def damage: Int
   def multiplier: BigDecimal
+  def `type`: TrapType
   def align: TrapAlign
   def points: Int
+  def effects: Set[TrapEffect]
+  def isLegal = Trap.isLegal(`type`, effects);
 }
+
 object Trap {
+
   case object AgonyMask extends TrapSkeleton(45, 0.9, Ceiling, Sadistic, 95)
   case object Aldebaran extends TrapSkeleton(1, 2.0, Ceiling, Sadistic, 60)
   case object ArrowSlit extends TrapSkeleton(25, 2.5, Wall, Elaborate, 90)
@@ -63,7 +68,7 @@ object Trap {
   case object NerveGas extends TrapSkeleton(3, 0.7, Wall, Elaborate, 50)
   case object OilBottle extends TrapSkeleton(3, 1.0, Ceiling, Elaborate, 65)
   case object Pillory extends TrapSkeleton(10, 0.8, Floor, Humiliating, 95)
-  case object PumpkinMask extends TrapSkeleton(1, 1.0, Ceiling, Humiliating, 65, Push4)
+  case object PumpkinMask extends TrapSkeleton(1, 1.0, Ceiling, Humiliating, 65, Move4)
   case object ReapersScythe extends TrapSkeleton(50, 0.9, Wall, Sadistic, 70)
   case object RollingBomb extends TrapSkeleton(55, 1.2, Wall, Elaborate, 100)
   case object ScreamFace extends TrapSkeleton(5, 1.9, Ceiling, Humiliating, 60)
@@ -92,12 +97,19 @@ object Trap {
   case object Washbin extends TrapSkeleton(7, 2.4, Ceiling, Humiliating, 90)
   case object WonderBalloon extends TrapSkeleton(10, 0.8, Floor, Humiliating, 65)
 
+  def isLegal(typ: TrapType, effects: Set[TrapEffect]) = {
+    def hasSlideEffect = effects.filter(_.isInstanceOf[TrapEffect.Slide]).size > 0
+    def isWall = typ == TrapType.Wall
+    !(hasSlideEffect && !isWall)
+  }
+
   sealed abstract class TrapSkeleton(val damage: Int,
                                      val multiplier: BigDecimal,
                                      val `type`: TrapType,
                                      val align: TrapAlign,
                                      val points: Int,
-                                     val effects: Set[TrapEffect] = Set.empty) extends Trap
+                                     val effects: Set[TrapEffect] = Set.empty) extends Trap {
+  }
 
   implicit def toSet[A](x: A): Set[A] = Set(x)
 

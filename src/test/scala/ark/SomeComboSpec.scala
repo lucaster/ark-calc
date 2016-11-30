@@ -9,11 +9,12 @@ class SomeComboSpec extends FunSpec {
 
   describe("A n x Combo") {
 
-    val n = 9;
+    val comboSize = 9;
 
     Trap.values.toStream
       .permutations
-      .filter { _.size <= n }
+      .filter { perm => perm.size <= comboSize }
+      .filter { perm => perm.filterNot { t => t.isLegal }.isEmpty }
       .map { traps => Combo(traps.toList map { trap => Hit(trap) }) }
   }
 }

@@ -1,5 +1,6 @@
 package ark
 
+import scala.Stream
 import scala.annotation.tailrec
 
 object Util {
@@ -14,7 +15,7 @@ object Util {
 
     powerset_rec(Set(Set.empty), s)
   }
-  
+
   def powersetStream[A](s: Set[A]): Stream[Set[A]] = {
     @tailrec
     def powerset_rec(acc: Stream[Set[A]], remaining: Set[A]): Stream[Set[A]] =
