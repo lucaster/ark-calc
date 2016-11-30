@@ -1,7 +1,6 @@
 package ark
 
 sealed trait TrapEffect
-
 object TrapEffect {
 
   sealed trait Move extends TrapEffect

@@ -21,6 +21,8 @@ case class Combo(val hits: List[Hit] = Nil) {
    */
   def append(hit: Hit) = copy(hits :+ hit)
 
+  def isFeasible = Combo.isFeasible(this);
+
   def mkString = hits map { hit => s"(${hit.trap}, ${hit.bonusMultiplier})" } mkString
 }
 
@@ -37,5 +39,11 @@ case object Combo {
       val last = hits.last
       if (!prev.contains(last)) ark(prev) + sum(hits) else 2 * ark(prev)
     }
+  }
+
+  def isFeasible(combo: Combo) = {
+    // no 2 OnSpot traps in a row
+    // no more than 4 Projectile traps in a row
+    ???
   }
 }
