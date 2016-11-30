@@ -20,6 +20,8 @@ case class Combo(val hits: List[Hit] = Nil) {
    * @return a new Combo instance
    */
   def append(hit: Hit) = copy(hits :+ hit)
+
+  def mkString = hits map { hit => s"(${hit.trap}, ${hit.bonusMultiplier})" } mkString
 }
 case object Combo {
   def sum(hits: List[Hit]) = hits.map(_.damage).sum * hits.map(_.multiplier).sum
@@ -27,7 +29,7 @@ case object Combo {
   def ark(hits: List[Hit]): BigDecimal = {
     if (hits.isEmpty) {
       0
-    } else {      
+    } else {
       val prev = hits.take(hits.size - 1)
       val last = hits.last
       if (!prev.contains(last)) ark(prev) + sum(hits) else 2 * ark(prev)
