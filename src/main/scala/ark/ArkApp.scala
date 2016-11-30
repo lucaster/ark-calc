@@ -1,21 +1,18 @@
 package ark
 
+import scala.io._
+import java.io._
+
 object ArkApp extends App {
 
-  import scala.io._
-  import java.io._
-
   val trapNum = 8;
-  val ark = 10000;
-  
+  val minArk = 10000;
+
   val combos = Util.powersetStream(Trap.values)
     .filter { _.size <= trapNum }
     .map { traps => Combo(traps.toList map { Hit(_) }) }
-    .filter { _.ark >= ark }
+    .filter { _.ark >= minArk }
     .take(1)
-    //.toList
-  //.toList.par
-  //.map { traps => Combo(traps map { Hit(_) }) }
 
   combos.foreach { combo => println(s"${combo.ark} ${combo.mkString}") }
 

@@ -1,6 +1,7 @@
 package ark
 
 sealed trait TrapEffect
+
 object TrapEffect {
 
   case object Push1 extends TrapEffect
