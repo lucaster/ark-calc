@@ -15,10 +15,14 @@ object TrapEffect {
    * Example: BearTrap, VacuumWall
    */
   case object Bind extends TrapEffect
+  case object Electricity extends TrapEffect
+  case object Enrage extends TrapEffect
+  case object Fire extends TrapEffect
   case object ForcedArmorBreak extends TrapEffect
+  case object Freeze extends TrapEffect
   /**
    * Trap also hits one or more spots next to the one it's placed at.
-   * Example: EvilStomp, SwingingHammer, 
+   * Example: EvilStomp, SwingingHammer,
    */
   case object HitsNear extends TrapEffect
   case object Move1 extends MoveX(1)
@@ -27,8 +31,11 @@ object TrapEffect {
   case object Move4 extends MoveX(4)
   case object Move6 extends MoveX(6)
   case object MoveToWall extends Move
+  case object Oil extends TrapEffect
   case object Projectile extends TrapEffect
   case object Roll extends TrapEffect
   case object Slide1 extends SlideX(1)
   case object Slide2 extends SlideX(2)
+  case object StageHit4 extends TrapEffect
+  case object StageHit7 extends TrapEffect
 }

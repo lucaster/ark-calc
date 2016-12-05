@@ -1,0 +1,521 @@
+-----------------------------------------
+Boulder
+-----------------------------------------
+Type               - Boulder
+Damage             - 50
+Charge             - 8 sec.
+Ark multiplier     - 0.9 -> 1.1
+ELABORATE points   - 70
+
+-----------------------------------------
+Iron Ball
+-----------------------------------------
+Type               - Boulder
+Damage             - 60
+Charge             - 10 sec.
+Ark multiplier     - 0.8
+ELABORATE points   - 80
+
+-----------------------------------------
+Flaming Boulder
+-----------------------------------------
+Type               - Fire, Boulder
+Damage             - 65
+Charge             - 8 sec.
+Ark multiplier     - 0.7
+ELABORATE points   - 75
+
+-----------------------------------------
+Snowball
+-----------------------------------------
+Type               - Boulder
+Damage             - 20
+Charge             - 9 sec.
+Ark multiplier     - 1.1 -> 1.3
+HUMILIATING points - 55
+
+-----------------------------------------
+Spiked Ball
+-----------------------------------------
+Type                - Boulder
+Damage              - 70
+Charge              - 11 sec.
+Ark multiplier      - 0.7
+SADISTIC points     - 90
+
+-----------------------------------------
+Washbin
+-----------------------------------------
+Type               - Enraging
+Damage             - 7
+Charge             - 3 sec.
+Ark multiplier     - 2.4
+HUMILIATING points - 90
+
+-----------------------------------------
+Vase
+-----------------------------------------
+Type               - Covers Head
+Damage             - 1
+Charge             - 3 sec.
+Ark multiplier     - 1.0
+ELABORATE points   - 70
+
+-----------------------------------------
+Oil Bottle
+-----------------------------------------
+Type               - Oil, Covers Head
+Damage             - 3
+Charge             - 6 sec.
+Ark multiplier     - 1.0 -> 1.2
+ELABORATE points   - 65
+
+-----------------------------------------
+Pumpkin Mask
+-----------------------------------------
+Type               - Covers Head
+Damage             - 1
+Charge             - 7 sec.
+Ark multiplier     - 1.0
+HUMILIATING points - 65 
+
+-----------------------------------------
+Agony Mask
+-----------------------------------------
+Type               - Electric, Covers Head
+Damage             - 45
+Charge             - 6 sec.
+Ark multiplier     - 0.9 -> 1.1
+SADISTIC points    - 95
+
+-----------------------------------------
+Swinging Axe
+-----------------------------------------
+Type               - Ceiling
+Damage             - 45
+Charge             - 5 sec.
+Ark multiplier     - 0.9
+SADISTIC points    - 60
+
+-----------------------------------------
+Swinging Hammer
+-----------------------------------------
+Type               - Ceiling
+Damage             - 20
+Charge             - 3 sec.
+Ark multiplier     - 0.9 -> 1.1
+ELABORATE points   - 55
+
+-----------------------------------------
+Evil Strike
+-----------------------------------------
+Type               - None
+Damage             - 35
+Charge             - 8 sec.
+Ark multiplier     - 0.8 -> 1.0
+ELABORATE points   - 66
+
+-----------------------------------------
+Needle Nasty
+-----------------------------------------
+Type               - Ceiling
+Damage             - 55
+Charge             - 10 sec.
+Ark multiplier     - 1.0
+SADISTIC points    - 70
+
+-----------------------------------------
+Claw
+-----------------------------------------
+Type               - Ceiling
+Damage             - 15
+Charge             - 5 sec.
+Ark multiplier     - 1.7 -> 1.9
+ELABORATE points   - 85
+
+-----------------------------------------
+Circular Saw
+-----------------------------------------
+Type               - Ceiling
+Damage             - 10 (x4)
+Charge             - 5 sec.
+Ark multiplier     - 0.5
+SADISTIC points    - 75
+
+-----------------------------------------
+Tombstone
+-----------------------------------------
+Type               - Boulder
+Damage             - 44
+Charge             - 8 sec.
+Ark multiplier     - 0.9
+HUMILIATING points - 60 
+
+-----------------------------------------
+Evil Stomp
+-----------------------------------------
+Type               - None
+Damage             - 50
+Charge             - 10 sec.
+Ark multiplier     - 1.0 -> 1.2
+HUMILIATING points - 66 
+
+-----------------------------------------
+Buzzsaw
+-----------------------------------------
+Type               - Ceiling
+Damage             - 35
+Charge             - 6 sec.
+Ark multiplier     - 0.8
+SADISTIC points    - 50
+
+-----------------------------------------
+Mega Yo-Yo
+-----------------------------------------
+Type               - None
+Damage             - 30
+Charge             - 9 sec.
+Ark multiplier     - 0.6
+HUMILIATING points - 50 
+
+-----------------------------------------
+Arrow Slit
+-----------------------------------------
+Type               - Projectile
+Damage             - 25
+Charge             - 2 sec.
+Ark multiplier     - 2.5 -> 2.7
+ELABORATE points   - 90
+
+-----------------------------------------
+Frozen Arrow
+-----------------------------------------
+Type               - Ice, Projectile
+Damage             - 20
+Charge             - 3 sec.
+Ark multiplier     - 2.0
+ELABORATE points   - 75
+
+-----------------------------------------
+Fireball
+-----------------------------------------
+Type               - Fire, Projectile
+Damage             - 35
+Charge             - 3 sec.
+Ark multiplier     - 1.8 -> 2.0
+ELABORATE points   - 85
+
+-----------------------------------------
+Lightning Spear
+-----------------------------------------
+Type               - Electric, Projectile
+Damage             - 45
+Charge             - 4 sec.
+Ark multiplier     - 1.4 -> 1.6
+ELABORATE points   - 95
+
+-----------------------------------------
+Gatling Arrows
+-----------------------------------------
+Type               - Projectile
+Damage             - 12 (x5)
+Charge             - 5 sec.
+Ark multiplier     - 1.0
+SADISTIC points    - 55
+
+-----------------------------------------
+Brutal Buzzsaw
+-----------------------------------------
+Type               - Projectile
+Damage             - 30
+Charge             - 4 sec.
+Ark multiplier     - 1.0
+SADISTIC points    - 65
+
+-----------------------------------------
+Sticky Arrow
+-----------------------------------------
+Type               - Projectile
+Damage             - 3
+Charge             - 5 sec.
+Ark multiplier     - 0.7
+HUMILIATING points - 70
+
+-----------------------------------------
+Cake in the Face
+-----------------------------------------
+Type               - None
+Damage             - 1
+Charge             - 3 sec.
+Ark multiplier     - 2.0
+HUMILIATING points - 95
+
+-----------------------------------------
+Rolling Bomb
+-----------------------------------------
+Type               - Fire
+Damage             - 55
+Charge             - 6 sec.
+Ark multiplier     - 1.2
+ELABORATE points   - 100
+
+-----------------------------------------
+Wall Nudge
+-----------------------------------------
+Type               - Wall
+Damage             - 5
+Charge             - 4 sec.
+Ark multiplier     - 1.2
+ELABORATE points   - 65
+
+-----------------------------------------
+Wall Smash
+-----------------------------------------
+Type               - Wall
+Damage             - 15
+Charge             - 6 sec.
+Ark multiplier     - 1.4
+ELABORATE points   - 70
+
+-----------------------------------------
+Evil Smash
+-----------------------------------------
+Type               - None
+Damage             - 40
+Charge             - 5 sec.
+Ark multiplier     - 1.0 -> 1.2
+ELABORATE points   - 66
+
+-----------------------------------------
+Nerve Gas
+-----------------------------------------
+Type               - Slow
+Damage             - 3
+Charge             - 8 sec.
+Ark multiplier     - 0.7 -> 0.9
+ELABORATE points   - 50
+
+-----------------------------------------
+Mallet
+-----------------------------------------
+Type               - Wall
+Damage             - 7
+Charge             - 5 sec.
+Ark multiplier     - 1.3 -> 1.5
+HUMILIATING points - 70
+
+-----------------------------------------
+Reaper's Scythe
+-----------------------------------------
+Type               - Wall
+Damage             - 50
+Charge             - 8 sec.
+Ark multiplier     - 0.9 -> 1.1
+SADISTIC points    - 70
+
+-----------------------------------------
+Vacuum Wall
+-----------------------------------------
+Type               - Vacuum
+Damage             - 1
+Charge             - 5 sec.
+Ark multiplier     - 0.6
+ELABORATE points   - 55
+
+-----------------------------------------
+Deadly Fan
+-----------------------------------------
+Type               - Vacuum, Wall
+Damage             - 45
+Charge             - 7 sec.
+Ark multiplier     - 0.4
+SADISTIC points    - 85
+
+-----------------------------------------
+Lethal Lance
+-----------------------------------------
+Type               - Wall
+Damage             - 40
+Charge             - 5 sec.
+Ark multiplier     - 0.5
+SADISTIC points    - 55
+
+-----------------------------------------
+Maiden's Embrace
+-----------------------------------------
+Type               - None
+Damage             - 60
+Charge             - 6 sec.
+Ark multiplier     - 0.8
+SADISTIC points    - 100
+
+-----------------------------------------
+Bear Trap
+-----------------------------------------
+Type               - Clamping
+Damage             - 15
+Charge             - 4 sec.
+Ark multiplier     - 0.8
+ELABORATE points   - 65
+
+-----------------------------------------
+Bloody Scissors
+-----------------------------------------
+Type               - Clamping
+Damage             - 50
+Charge             - 7 sec.
+Ark multiplier     - 0.6
+SADISTIC points    - 80
+
+-----------------------------------------
+Hanging Chains
+-----------------------------------------
+Type               - Clamping
+Damage             - 15
+Charge             - 8 sec.
+Ark multiplier     - 0.7
+ELABORATE points   - 60
+
+-----------------------------------------
+Vice Grip
+-----------------------------------------
+Type               - Clamping
+Damage             - 10
+Charge             - 8 sec.
+Ark multiplier     - 0.9 -> 1.1
+HUMILIATING points - 65
+
+-----------------------------------------
+Springboard
+-----------------------------------------
+Type               - Floor
+Damage             - 5
+Charge             - 4 sec.
+Ark multiplier     - 0.7
+ELABORATE points   - 50
+
+-----------------------------------------
+Super Springboard
+-----------------------------------------
+Type               - Floor
+Damage             - 10
+Charge             - 6 sec.
+Ark multiplier     - 0.8 -> 1.0
+ELABORATE points   - 55
+
+-----------------------------------------
+Human Cannon
+-----------------------------------------
+Type               - Floor
+Damage             - 30
+Charge             - 7 sec.
+Ark multiplier     - 0.7 -> 0.9
+HUMILIATING points - 80
+
+-----------------------------------------
+Blast Bomb
+-----------------------------------------
+Type               - Fire
+Damage             - 50
+Charge             - 3 sec.
+Ark multiplier     - 1.2
+ELABORATE points   - 90
+
+-----------------------------------------
+Spark Rod
+-----------------------------------------
+Type               - Electric
+Damage             - 35
+Charge             - 5 sec.
+Ark multiplier     - 0.6 -> 0.8
+ELABORATE points   - 60
+
+-----------------------------------------
+Launchpad
+-----------------------------------------
+Type               - Floor
+Damage             - 25
+Charge             - 4 sec.
+Ark multiplier     - 1.1
+ELABORATE points   - 80
+
+-----------------------------------------
+Hellfire
+-----------------------------------------
+Type               - Fire
+Damage             - 65
+Charge             - 7 sec.
+Ark multiplier     - 1.0
+SADISTIC points    - 75
+
+-----------------------------------------
+Evil Punch
+-----------------------------------------
+Type               - None
+Damage             - 20
+Charge             - 6 sec.
+Ark multiplier     - 1.0 -> 1.2
+ELABORATE points   - 66
+
+-----------------------------------------
+Shark Blade
+-----------------------------------------
+Type               - Floor
+Damage             - 25
+Charge             - 8 sec.
+Ark multiplier     - 1.0
+SADISTIC points    - 50
+
+-----------------------------------------
+Banana Peel
+-----------------------------------------
+Type               - Floor
+Damage             - 5
+Charge             - 1 sec.
+Ark multiplier     - 1.3 -> 1.5
+HUMILIATING points - 100
+
+-----------------------------------------
+Iron Rake
+-----------------------------------------
+Type               - Enraging
+Damage             - 10
+Charge             - 6 sec.
+Ark multiplier     - 0.7
+HUMILIATING points - 75
+
+-----------------------------------------
+Delta Horse
+-----------------------------------------
+Type               - None
+Damage             - 30
+Charge             - 6 sec.
+Ark multiplier     - 0.6
+HUMILIATING points - 85
+
+-----------------------------------------
+Hotplate
+-----------------------------------------
+Type               - Fire, Floor
+Damage             - 40
+Charge             - 7 sec.
+Ark multiplier     - 0.7
+HUMILIATING points - 85
+
+-----------------------------------------
+Vacuum Floor
+-----------------------------------------
+Type               - Vacuum
+Damage             - 1
+Charge             - 6 sec.
+Ark multiplier     - 0.5
+ELABORATE points   - 50
+
+-----------------------------------------
+Black Hole
+-----------------------------------------
+Type               - Vacuum, Floor
+Damage             - 50
+Charge             - 8 sec.
+Ark multiplier     - 0.4 -> 0.6
+HUMILIATING points - 50

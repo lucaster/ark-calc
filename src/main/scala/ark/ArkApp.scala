@@ -2,6 +2,8 @@ package ark
 
 import scala.io.Source
 import scala.util.Random
+import TrapType._
+import TrapAlign._
 
 object ArkApp extends App {
 
@@ -13,7 +15,8 @@ object ArkApp extends App {
     Util.powerset(Trap.values)
       .filter { _.size == trapNum }
       .flatMap { _.toSeq.permutations }
-      .map { traps => Combo(traps map { Hit(_) }) }
+      .map { _ map { trap => Hit(trap) } }
+      .map { Combo(_) }
       .filter { _.isFeasible }
       .filter { _.ark >= minArk }
       .take(waitFactor)
