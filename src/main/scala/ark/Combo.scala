@@ -5,7 +5,7 @@ import scala.math.BigDecimal.int2bigDecimal
 import ark.TrapType._
 import ark.TrapEffect._
 
-case class Combo(val hits: List[Hit] = Nil) {
+case class Combo(val hits: Seq[Hit] = Nil) {
 
   /**
    * Current total ark
@@ -31,9 +31,9 @@ case class Combo(val hits: List[Hit] = Nil) {
 
 case object Combo {
 
-  def sum(hits: List[Hit]) = hits.map(_.damage).sum * hits.map(_.multiplier).sum
+  def sum(hits: Traversable[Hit]) = hits.map(_.damage).sum * hits.map(_.multiplier).sum
 
-  def ark(hits: List[Hit]): BigDecimal = {
+  def ark(hits: Seq[Hit]): BigDecimal = {
     if (hits.isEmpty) {
       0
     }
@@ -66,14 +66,15 @@ case object Combo {
     return true;
   }
 
-  def isValidSequence(trap1: Trap, trap2: Trap, trap3: Trap): Boolean = true
+  def isFeasible(traps: Seq[Trap]): Boolean = {
 
-  def isFeasible(combo: Combo) = {
+    val allPairsValid = traps
+      .sliding(2)
+      .collect { case trap1 :: trap2 :: Nil => !isValidSequence(trap1, trap2) }
+      .toSeq.isEmpty
 
-    type ComboValiation = Combo => Boolean
-
-    val yes: ComboValiation = combo => true
-
-    ???
+    allPairsValid
   }
+
+  def isFeasible(combo: Combo): Boolean = isFeasible(combo.hits.map { hit => hit.trap });
 }

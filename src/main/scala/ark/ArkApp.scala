@@ -1,23 +1,26 @@
 package ark
 
 import scala.io.Source
+import scala.util.Random
 
 object ArkApp extends App {
 
-  val set = List(1, 2, 3, 4, 5, 6)
-  val head = 3
-  println(set diff Seq(head) tail) // expected List(2, 4, 5, 6)
+  val trapNum = 7;
+  val minArk = 500;
 
-  val trapNum = 8;
-  val minArk = 10000;
+  val combos =
+    Util.powerset(Trap.values)
+      .filter { _.size == trapNum }
+      .flatMap { _.toSeq.permutations }
+      .filter { Combo.isFeasible }
+      .map { traps => Combo(traps map { trap => Hit(trap) } toList) }
+      .filter { _.ark >= minArk }
+      .take(5)
+      .toSeq.sortBy { -_.ark }
 
-  val combos = Util.powersetStream(Trap.values)
-    .filter { _.size <= trapNum }
-    .map { traps => Combo(traps.toList map { Hit(_) }) }
-    .filter { _.ark >= minArk }
-    .take(1)
+  println(combos.size)
 
-  combos.foreach { combo => println(s"${combo.ark} ${combo.mkString}") }
+  combos.toList.foreach { combo => println(s"${combo.ark} ${combo.mkString}") }
 
   //println(combos.size)
 
