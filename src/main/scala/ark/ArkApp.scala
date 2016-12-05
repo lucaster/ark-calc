@@ -6,17 +6,19 @@ import scala.util.Random
 object ArkApp extends App {
 
   val trapNum = 7;
-  val minArk = 500;
+  val minArk = 5000;
+  val waitFactor = 100000;
 
   val combos =
     Util.powerset(Trap.values)
       .filter { _.size == trapNum }
       .flatMap { _.toSeq.permutations }
-      .filter { Combo.isFeasible }
-      .map { traps => Combo(traps map { trap => Hit(trap) } toList) }
+      .map { traps => Combo(traps map { Hit(_) }) }
+      .filter { _.isFeasible }
       .filter { _.ark >= minArk }
-      .take(5)
+      .take(waitFactor)
       .toSeq.sortBy { -_.ark }
+      .take(5)
 
   println(combos.size)
 
