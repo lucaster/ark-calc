@@ -4,6 +4,10 @@ import scala.io.Source
 
 object ArkApp extends App {
 
+  val set = List(1, 2, 3, 4, 5, 6)
+  val head = 3
+  println(set diff Seq(head) tail) // expected List(2, 4, 5, 6)
+
   val trapNum = 8;
   val minArk = 10000;
 

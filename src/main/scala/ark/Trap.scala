@@ -7,11 +7,12 @@ import TrapType._
 sealed trait Trap {
   def damage: Int
   def multiplier: BigDecimal
-  def `type`: TrapType
+  def kind: TrapType
   def align: TrapAlign
   def points: Int
   def effects: Set[TrapEffect]
-  def isLegal = Trap.isLegal(`type`, effects);
+  def isLegal = Trap.isLegal(kind, effects);
+  def movesVictim = effects.filter { effect => effect.isInstanceOf[Move] }.size > 0
 }
 
 object Trap {
@@ -105,7 +106,7 @@ object Trap {
 
   sealed abstract class TrapSkeleton(val damage: Int,
                                      val multiplier: BigDecimal,
-                                     val `type`: TrapType,
+                                     val kind: TrapType,
                                      val align: TrapAlign,
                                      val points: Int,
                                      val effects: Set[TrapEffect] = Set.empty) extends Trap {

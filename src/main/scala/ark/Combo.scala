@@ -2,6 +2,9 @@ package ark
 
 import scala.math.BigDecimal.int2bigDecimal
 
+import ark.TrapType._
+import ark.TrapEffect._
+
 case class Combo(val hits: List[Hit] = Nil) {
 
   /**
@@ -41,9 +44,36 @@ case object Combo {
     }
   }
 
+  def isValidSequence(trap1: Trap, trap2: Trap): Boolean = {
+
+    if (!trap1.movesVictim && !trap2.movesVictim) {
+      if (!trap1.effects.contains(HitsNear) && !trap2.effects.contains(HitsNear)) {
+        if (trap1.kind == Floor && trap2.kind == Floor) {
+          return false
+        }
+        if (trap1.kind == Ceiling && trap2.kind == Ceiling) {
+          return false
+        }
+        if (trap1.kind == Floor && trap2.kind == Ceiling) {
+          return false
+        }
+        if (trap1.kind == Ceiling && trap2.kind == Floor) {
+          return false
+        }
+      }
+    }
+
+    return true;
+  }
+
+  def isValidSequence(trap1: Trap, trap2: Trap, trap3: Trap): Boolean = true
+
   def isFeasible(combo: Combo) = {
-    // no 2 OnSpot traps in a row
-    // no more than 4 Projectile traps in a row
+
+    type ComboValiation = Combo => Boolean
+
+    val yes: ComboValiation = combo => true
+
     ???
   }
 }

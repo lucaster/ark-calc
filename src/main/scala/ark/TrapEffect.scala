@@ -11,15 +11,24 @@ object TrapEffect {
 
   sealed abstract class SlideX(squares: Int) extends MoveX(squares) with Slide
 
+  /**
+   * Example: BearTrap, VacuumWall
+   */
   case object Bind extends TrapEffect
-  case object OnSpot extends TrapEffect
-  case object Projectile extends TrapEffect
+  case object ForcedArmorBreak extends TrapEffect
+  /**
+   * Trap also hits one or more spots next to the one it's placed at.
+   * Example: EvilStomp, SwingingHammer, 
+   */
+  case object HitsNear extends TrapEffect
   case object Move1 extends MoveX(1)
   case object Move2 extends MoveX(2)
   case object Move3 extends MoveX(3)
   case object Move4 extends MoveX(4)
   case object Move6 extends MoveX(6)
+  case object MoveToWall extends Move
+  case object Projectile extends TrapEffect
+  case object Roll extends TrapEffect
   case object Slide1 extends SlideX(1)
   case object Slide2 extends SlideX(2)
-  case object MoveToWall extends Move
 }
