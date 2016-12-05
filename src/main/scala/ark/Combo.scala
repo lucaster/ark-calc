@@ -68,12 +68,14 @@ case object Combo {
 
   def isFeasible(traps: Seq[Trap]): Boolean = {
 
-    val allPairsValid = traps
+    def allPairsValid = traps
       .sliding(2)
       .collect { case trap1 :: trap2 :: Nil => !isValidSequence(trap1, trap2) }
       .toSeq.isEmpty
 
-    allPairsValid
+    def allTrapsLegal = traps.filterNot { _.isLegal }.isEmpty
+
+    allPairsValid && allTrapsLegal
   }
 
   def isFeasible(combo: Combo): Boolean = isFeasible(combo.hits.map { hit => hit.trap });
