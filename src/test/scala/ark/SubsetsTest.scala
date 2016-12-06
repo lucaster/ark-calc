@@ -7,7 +7,7 @@ class SubsetsTest extends FunSpec {
 
   describe("") {
     it("") {
-      println((1 to 80).toSet.subsets(2).size)
+      //Trap.values.toSeq.combinations(2).foreach { println }
     }
   }
 }

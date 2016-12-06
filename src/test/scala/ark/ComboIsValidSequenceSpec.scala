@@ -67,5 +67,10 @@ class ComboIsValidSequenceSpec extends FunSpec {
         assert(Combo.isValidSequence(trap1, trap2) === false)
       }
     }
+    describe("Snowball -> SharkBlade") {
+      it("is not legal") {
+        assert(!Combo.isValidSequence(Snowball, SharkBlade))
+      }
+    }
   }
 }

@@ -4,30 +4,40 @@ import scala.io.Source
 import scala.util.Random
 import TrapType._
 import TrapAlign._
+import TrapEffect._
 
 object ArkApp extends App {
 
   val trapNum = 7;
-  val minArk = 5000;
-  val waitFactor = 100000;
+  val minArk = 1;
+  val minElaborate = 1;
+  val minHumiliating = 1;
+  val minSadistic = 1;
+  val waitFactor = 1;
 
-  val combos =
-    Util.powerset(Trap.values)
-      .filter { _.size == trapNum }
-      .flatMap { _.toSeq.permutations }
-      .map { _ map { trap => Hit(trap) } }
+  time(
+    Trap.values.toSeq.combinations(trapNum)
+      .map { _ map { Hit(_) } }
       .map { Combo(_) }
       .filter { _.isFeasible }
       .filter { _.ark >= minArk }
+      .filter { _.elaborate >= minElaborate }
+      .filter { _.humiliating >= minHumiliating }
+      .filter { _.sadistic >= minSadistic }
+      //.filter { _.hits.map { _.trap }.filter { _.effects.contains(Projectile) }.size <= 0 }
+      //.filter { _.hits.map { _.trap }.filter { _.effects.contains(Roll) }.size <= 0 }
       .take(waitFactor)
       .toSeq.sortBy { -_.ark }
       .take(5)
+      .foreach { combo => println(s"a${combo.ark} e${combo.elaborate} h${combo.humiliating} s${combo.sadistic} ${combo.mkString}") })
 
-  println(combos.size)
-
-  combos.toList.foreach { combo => println(s"${combo.ark} ${combo.mkString}") }
-
-  //println(combos.size)
+  def time[R](block: => R): R = {
+    val t0 = System.nanoTime()
+    val result = block // call-by-name
+    val t1 = System.nanoTime()
+    println("Elapsed time: " + (t1 - t0) / 1000000000 + "s")
+    result
+  }
 
   def a = Source.fromInputStream(getClass.getResourceAsStream("/TrapList.csv"))
     .getLines
