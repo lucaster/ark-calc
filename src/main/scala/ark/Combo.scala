@@ -39,7 +39,12 @@ case object Combo {
 
   def summer(filter: Hit => Boolean, scorer: Hit => BigDecimal): Traversable[Hit] => BigDecimal = {
     hits =>
-      (hits.filter { filter }.map { scorer }.sum) * (hits.map { _.multiplier }.sum)
+      {
+        val theHits = hits.filter { filter }
+        val scoreSum = theHits.map { scorer }.sum
+        val multiplierSum = theHits.map { _.multiplier }.sum
+        scoreSum * multiplierSum
+      }
   }
 
   def damageSum = summer(_ => true, _.damage)
@@ -51,15 +56,30 @@ case object Combo {
 
     def theTotaler = totaler(summer)
 
-    hits =>
+    /**
+     * First attempt
+     */
+    def sol1: Seq[Hit] => BigDecimal = hits =>
       if (hits.isEmpty) {
         0
       }
       else {
         val prev = hits.take(hits.size - 1)
         val last = hits.last
-        if (!prev.contains(last)) theTotaler(prev) + summer(hits) else 2 * theTotaler(prev)
+        if (!prev.contains(last))
+          theTotaler(prev) + summer(hits)
+        else
+          2 * theTotaler(prev)
       }
+
+    /**
+     * Silly sum
+     */
+    def sillySum: Seq[Hit] => BigDecimal =
+      hits =>
+        (1 to hits.size).map(hits.take).map(summer).sum
+
+    sol1
   }
 
   def ark = totaler(damageSum)

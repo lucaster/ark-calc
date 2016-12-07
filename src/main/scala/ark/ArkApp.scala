@@ -9,12 +9,12 @@ import TrapEffect._
 
 object ArkApp extends App {
 
-  val trapNum = 7;
-  val minArk = 5000;
-  val minElaborate = 1000;
-  val minHumiliating = 1000;
-  val minSadistic = 3000;
-  val waitFactor = 10;
+  val trapNum = 7
+  val minArk = 1000
+  val minElaborate = 1000
+  val minHumiliating = 1000
+  val minSadistic = 1000
+  val waitFactor = 100
 
   time({
 
@@ -22,7 +22,8 @@ object ArkApp extends App {
       .filter { !_.explodes }
       .filter { !_.isProjectile }
       .filter { !_.rolls }
-      .-(ChurchBell)
+      .filter { _.movesVictim }
+      .-(ChurchBell, MagnifyingGlass)
       .toSeq)
 
     traps.combinations(trapNum)
@@ -36,7 +37,6 @@ object ArkApp extends App {
       //.filter { _.hits.filter { _.trap.isProjectile }.size <= 1 }
       .take(waitFactor)
       .toSeq.sortBy { -_.ark }
-      .take(5)
       .foreach { combo => println(s"a${combo.ark} e${combo.elaborate} h${combo.humiliating} s${combo.sadistic} ${combo.mkString}") }
   })
 
