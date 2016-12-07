@@ -9,11 +9,11 @@ import TrapEffect._
 object ArkApp extends App {
 
   val trapNum = 7;
-  val minArk = 1;
-  val minElaborate = 1;
-  val minHumiliating = 1;
-  val minSadistic = 1;
-  val waitFactor = 1;
+  val minArk = 5000;
+  val minElaborate = 3000;
+  val minHumiliating = 3000;
+  val minSadistic = 3000;
+  val waitFactor = 10;
 
   time(
     Trap.values.toSeq.combinations(trapNum)
@@ -24,8 +24,8 @@ object ArkApp extends App {
       .filter { _.elaborate >= minElaborate }
       .filter { _.humiliating >= minHumiliating }
       .filter { _.sadistic >= minSadistic }
-      //.filter { _.hits.map { _.trap }.filter { _.effects.contains(Projectile) }.size <= 0 }
-      //.filter { _.hits.map { _.trap }.filter { _.effects.contains(Roll) }.size <= 0 }
+      .filter { _.hits.map { _.trap }.filter { _.effects.contains(Projectile) }.size <= 0 }
+      .filter { _.hits.map { _.trap }.filter { _.effects.contains(Roll) }.size <= 0 }
       .take(waitFactor)
       .toSeq.sortBy { -_.ark }
       .take(5)

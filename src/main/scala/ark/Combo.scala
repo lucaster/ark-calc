@@ -99,7 +99,7 @@ case object Combo {
       }
       .isEmpty
 
-    allTrapsLegal && allPairsValid
+    allTrapsLegal //&& allPairsValid
   }
 
   def isFeasible(combo: Combo): Boolean = isFeasible(combo.hits.map { hit => hit.trap });
