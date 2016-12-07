@@ -18,9 +18,8 @@ class SameTrapComboSpec extends FunSpec {
       assert(n === combo.hits.size);
     }
 
-    it("has ark = ark(hit)*2^(n-1)") {
-      val first = hits.head
-      assert(combo.ark === first.damage * first.multiplier * Math.pow(2, n - 1));
+    it("has ark = ???") {
+      ???
     }
   }
 }

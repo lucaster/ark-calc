@@ -10,11 +10,24 @@ import TrapEffect._
 object ArkApp extends App {
 
   val trapNum = 7
-  val minArk = 1000
+  val minArk = 5000
   val minElaborate = 1000
   val minHumiliating = 1000
   val minSadistic = 1000
   val waitFactor = 100
+
+  val japCombo = Combo(Seq[Hit](
+    Hit(Springboard),
+    Hit(Washbin, 0.1),
+    Hit(WallNudge, 0.1),
+    Hit(PumpkinMask),
+    Hit(LethalLance, 0.1),
+    Hit(Vase),
+    Hit(IronRake, 0.1),
+    Hit(BearTrap),
+    Hit(SwingingAxe, 0.1)))
+
+  println(Combo.scores(japCombo))
 
   time({
 
@@ -23,7 +36,7 @@ object ArkApp extends App {
       .filter { !_.isProjectile }
       .filter { !_.rolls }
       .filter { _.movesVictim }
-      .-(ChurchBell, MagnifyingGlass)
+      .-(ChurchBell, MagnifyingGlass, Claw, InverseSaltire, ReapersScythe)
       .toSeq)
 
     traps.combinations(trapNum)
@@ -37,8 +50,11 @@ object ArkApp extends App {
       //.filter { _.hits.filter { _.trap.isProjectile }.size <= 1 }
       .take(waitFactor)
       .toSeq.sortBy { -_.ark }
-      .foreach { combo => println(s"a${combo.ark} e${combo.elaborate} h${combo.humiliating} s${combo.sadistic} ${combo.mkString}") }
+      .foreach { print }
   })
+
+  def print(combo: Combo) =
+    println(s"a${combo.ark} e${combo.elaborate} h${combo.humiliating} s${combo.sadistic} ${combo.mkString}")
 
   def time[R](block: => R): R = {
     val t0 = System.nanoTime()

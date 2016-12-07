@@ -6,86 +6,104 @@ import ark.Trap._
 import ark.TrapType._
 import ark.TrapAlign._
 import ark.TrapEffect._
+import scala.math.ScalaNumber
 
 case class Combo(val hits: Seq[Hit] = Nil) {
-
-  /**
-   * Current total ark
-   */
-  def ark = Combo.ark(hits).toInt
-
-  def elaborate = Combo.elaborate(hits).toInt
-  def humiliating = Combo.humiliating(hits).toInt
-  def sadistic = Combo.sadistic(hits).toInt
-
-  /**
-   * Combo ark if the hit were added.
-   */
-  def ark(candidate: Hit) = Combo.ark(hits :+ candidate).toInt;
-
-  /**
-   * Appends the hit at the end of the Combo.
-   *
-   * @return a new Combo instance
-   */
-  def append(hit: Hit) = copy(hits :+ hit)
-
+  def ark = scores.ark
+  def elaborate = scores.elaborate
+  def humiliating = scores.humiliating
+  def sadistic = scores.sadistic
   def isFeasible = Combo.isFeasible(this);
-
   def mkString = hits map { hit => s"(${hit.trap}, ${hit.bonusMultiplier})" } mkString
+  private[this] lazy val scores = Combo.scores(this)
 }
 
 case object Combo {
 
-  def summer(filter: Hit => Boolean, scorer: Hit => BigDecimal): Traversable[Hit] => BigDecimal = {
-    hits =>
-      {
-        val theHits = hits.filter { filter }
-        val scoreSum = theHits.map { scorer }.sum
-        val multiplierSum = theHits.map { _.multiplier }.sum
-        scoreSum * multiplierSum
+  def ark(hits: Traversable[Hit]) = (hits.map { _.damage }.sum * hits.map { _.multiplier }.sum).toInt
+
+  /**
+   * http://www7b.biglobe.ne.jp/~utherpendragon/kagero3.html
+   */
+  def scores(combo: Combo) = {
+
+    case class Scores(elaborate: BigDecimal, sadistic: BigDecimal, humiliating: BigDecimal, ark: BigDecimal)
+
+    var hasElaborate, hasSadistic, hasHumiliating = false
+    var elaborate, sadistic, humiliating = 0
+    var cumulativeElaborate, cumulativeSadistic, cumulativeHumiliating = 0
+    var cumulativeMultiplier = BigDecimal(0)
+    var cumulativeElaborateMultipliers, cumulativeSadisticMultipliers, cumulativeHumiliatingMultipliers: Seq[BigDecimal] = Nil
+
+    for { hit <- combo.hits } {
+
+      cumulativeMultiplier += hit.multiplier
+
+      hit.align match {
+
+        case Elaborate => {
+          elaborate = cumulativeElaborateMultipliers.map { x => (x * cumulativeElaborate).toInt }.sum + ((cumulativeElaborate + hit.points) * cumulativeMultiplier).toInt
+          cumulativeElaborate = (cumulativeElaborate + hit.points)
+          cumulativeElaborateMultipliers = Nil
+          hasElaborate = true
+          if (hasSadistic) {
+            cumulativeSadisticMultipliers match {
+              case Nil            => cumulativeSadisticMultipliers :+= cumulativeMultiplier
+              case (init :+ last) => cumulativeSadisticMultipliers :+= (last + hit.multiplier)
+            }
+          }
+          if (hasHumiliating) {
+            cumulativeHumiliatingMultipliers match {
+              case Nil            => cumulativeHumiliatingMultipliers :+= cumulativeMultiplier
+              case (init :+ last) => cumulativeHumiliatingMultipliers :+= (last + hit.multiplier)
+            }
+          }
+        }
+
+        case Sadistic => {
+          sadistic = cumulativeSadisticMultipliers.map { x => (x * cumulativeSadistic).toInt }.sum + ((cumulativeSadistic + hit.points) * cumulativeMultiplier).toInt
+          cumulativeSadistic = (cumulativeSadistic + hit.points)
+          cumulativeSadisticMultipliers = Nil
+          hasSadistic = true
+          if (hasElaborate) {
+            cumulativeElaborateMultipliers match {
+              case Nil            => cumulativeElaborateMultipliers :+= cumulativeMultiplier
+              case (init :+ last) => cumulativeElaborateMultipliers :+= (last + hit.multiplier)
+            }
+          }
+          if (hasHumiliating) {
+            cumulativeHumiliatingMultipliers match {
+              case Nil            => cumulativeHumiliatingMultipliers :+= cumulativeMultiplier
+              case (init :+ last) => cumulativeHumiliatingMultipliers :+= (last + hit.multiplier)
+            }
+          }
+        }
+
+        case Humiliating => {
+          humiliating = cumulativeHumiliatingMultipliers.map { x => (x * cumulativeHumiliating).toInt }.sum + ((cumulativeHumiliating + hit.points) * cumulativeMultiplier).toInt
+          cumulativeHumiliating = (cumulativeHumiliating + hit.points)
+          cumulativeHumiliatingMultipliers = Nil
+          hasHumiliating = true
+          if (hasSadistic) {
+            cumulativeSadisticMultipliers match {
+              case Nil            => cumulativeSadisticMultipliers :+= cumulativeMultiplier
+              case (init :+ last) => cumulativeSadisticMultipliers :+= (last + hit.multiplier)
+            }
+          }
+          if (hasElaborate) {
+            cumulativeElaborateMultipliers match {
+              case Nil            => cumulativeElaborateMultipliers :+= cumulativeMultiplier
+              case (init :+ last) => cumulativeElaborateMultipliers :+= (last + hit.multiplier)
+            }
+          }
+        }
       }
+    }
+
+    val ark = Combo.ark(combo.hits)
+
+    Scores(elaborate, sadistic, humiliating, ark)
   }
-
-  def damageSum = summer(_ => true, _.damage)
-  def elaborateSum = summer(_.trap.align == Elaborate, _.trap.points)
-  def sadisticSum = summer(_.trap.align == Sadistic, _.trap.points)
-  def humiliatingSum = summer(_.trap.align == Humiliating, _.trap.points)
-
-  def totaler(summer: Traversable[Hit] => BigDecimal): Seq[Hit] => BigDecimal = {
-
-    def theTotaler = totaler(summer)
-
-    /**
-     * First attempt
-     */
-    def sol1: Seq[Hit] => BigDecimal = hits =>
-      if (hits.isEmpty) {
-        0
-      }
-      else {
-        val prev = hits.take(hits.size - 1)
-        val last = hits.last
-        if (!prev.contains(last))
-          theTotaler(prev) + summer(hits)
-        else
-          2 * theTotaler(prev)
-      }
-
-    /**
-     * Silly sum
-     */
-    def sillySum: Seq[Hit] => BigDecimal =
-      hits =>
-        (1 to hits.size).map(hits.take).map(summer).sum
-
-    sol1
-  }
-
-  def ark = totaler(damageSum)
-  def elaborate = totaler(elaborateSum)
-  def sadistic = totaler(sadisticSum)
-  def humiliating = totaler(humiliatingSum)
 
   def isValidSequence(trap1: Trap, trap2: Trap): Boolean = {
 
