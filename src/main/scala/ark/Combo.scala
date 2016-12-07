@@ -89,7 +89,7 @@ case object Combo {
 
     def onlyOnce = traps.distinct.size == traps.size
 
-    // TODO: very slow
+    // TODO: slows down a lot
     def allPairsValid = traps
       .sliding(2)
       .collect {

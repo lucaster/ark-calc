@@ -14,6 +14,9 @@ sealed trait Trap {
   def effects: Set[TrapEffect]
   def isLegal = Trap.isLegal(kind, effects);
   def movesVictim = effects.filter { effect => effect.isInstanceOf[Move] }.size > 0
+  def explodes = effects.contains(Explode)
+  def rolls = effects.contains(Roll)
+  def isProjectile = effects.contains(Projectile)
 }
 
 object Trap {
@@ -28,7 +31,7 @@ object Trap {
   case object BearTrap extends TrapSkeleton(15, 0.8, Floor, Elaborate, 65, Set(Bind))
   case object BidetToilet extends TrapSkeleton(20, 0.6, Floor, Humiliating, 75, Set(Bind, Move2))
   case object BlackHole extends TrapSkeleton(50, 0.4, Floor, Humiliating, 50, Set(Bind)) // Move?
-  case object BlastBomb extends TrapSkeleton(50, 1.2, Floor, Elaborate, 90, Set(Fire, Move2))
+  case object BlastBomb extends TrapSkeleton(50, 1.2, Floor, Elaborate, 90, Set(Fire, Move2, Explode))
   case object BloodyScissors extends TrapSkeleton(50, 0.6, Floor, Sadistic, 80, Set(Bind))
   case object Boulder extends TrapSkeleton(50, 0.9, Ceiling, Elaborate, 70, Set(Roll))
   case object BrutalBuzzsaw extends TrapSkeleton(30, 1.0, Wall, Sadistic, 65, Set(Projectile, MoveToWall))
@@ -57,8 +60,8 @@ object Trap {
   case object GatlingArrow extends TrapSkeleton(12, 1.0, Wall, Sadistic, 55, Set(Projectile, StageHit5))
   case object GenocideEye extends TrapSkeleton(10, 1.3, Ceiling, Elaborate, 65, Set(Move3))
   case object HangingChains extends TrapSkeleton(15, 0.7, Floor, Elaborate, 60, Set(Bind))
-  case object Hellfire extends TrapSkeleton(65, 1.0, Floor, Sadistic, 75, Set(Fire, Move3))
-  case object HellsJudjement extends TrapSkeleton(55, 1.0, Ceiling, Sadistic, 100, Set(Move3, StageHit2, Electric))
+  case object Hellfire extends TrapSkeleton(65, 1.0, Floor, Sadistic, 75, Set(Fire, Move3, Explode))
+  case object HellsJudjement extends TrapSkeleton(55, 1.0, Ceiling, Sadistic, 100, Set(Move3, StageHit2, Electric, Explode))
   case object HellLaser extends TrapSkeleton(35, 1.1, Wall, Sadistic, 65, Set(Projectile, Electric))
   case object HorseHead extends TrapSkeleton(3, 1.4, Ceiling, Humiliating, 80, Set(Move8))
   case object Hotplate extends TrapSkeleton(40, 0.7, Floor, Humiliating, 85, Set(Bind, Move2, Fire))

@@ -2,6 +2,7 @@ package ark
 
 import scala.io.Source
 import scala.util.Random
+import Trap._
 import TrapType._
 import TrapAlign._
 import TrapEffect._
@@ -10,13 +11,21 @@ object ArkApp extends App {
 
   val trapNum = 7;
   val minArk = 5000;
-  val minElaborate = 3000;
-  val minHumiliating = 3000;
+  val minElaborate = 1000;
+  val minHumiliating = 1000;
   val minSadistic = 3000;
-  val waitFactor = 1;
+  val waitFactor = 10;
 
-  time(
-    Trap.values.toSeq.combinations(trapNum)
+  time({
+
+    val traps = (Trap.values
+      .filter { !_.explodes }
+      .filter { !_.isProjectile }
+      .filter { !_.rolls }
+      .-(ChurchBell)
+      .toSeq)
+
+    traps.combinations(trapNum)
       .map { _ map { Hit(_) } }
       .map { Combo(_) }
       .filter { _.isFeasible }
@@ -24,12 +33,12 @@ object ArkApp extends App {
       .filter { _.elaborate >= minElaborate }
       .filter { _.humiliating >= minHumiliating }
       .filter { _.sadistic >= minSadistic }
-      .filter { _.hits.map { _.trap }.filter { _.effects.contains(Projectile) }.size <= 0 }
-      .filter { _.hits.map { _.trap }.filter { _.effects.contains(Roll) }.size <= 0 }
+      //.filter { _.hits.filter { _.trap.isProjectile }.size <= 1 }
       .take(waitFactor)
       .toSeq.sortBy { -_.ark }
       .take(5)
-      .foreach { combo => println(s"a${combo.ark} e${combo.elaborate} h${combo.humiliating} s${combo.sadistic} ${combo.mkString}") })
+      .foreach { combo => println(s"a${combo.ark} e${combo.elaborate} h${combo.humiliating} s${combo.sadistic} ${combo.mkString}") }
+  })
 
   def time[R](block: => R): R = {
     val t0 = System.nanoTime()

@@ -19,6 +19,7 @@ object TrapEffect {
   case object Electric extends TrapEffect
   case object Enraging extends TrapEffect
   case object Enveloping extends TrapEffect
+  case object Explode extends Move
   case object Fire extends TrapEffect
   case object Flammable extends TrapEffect
   case object ForcedArmorBreak extends TrapEffect
