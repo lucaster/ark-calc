@@ -13,7 +13,7 @@ object ArkApp extends App {
   val minElaborate = 3000;
   val minHumiliating = 3000;
   val minSadistic = 3000;
-  val waitFactor = 10;
+  val waitFactor = 1;
 
   time(
     Trap.values.toSeq.combinations(trapNum)
