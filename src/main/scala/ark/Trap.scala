@@ -12,7 +12,6 @@ sealed trait Trap {
   def align: TrapAlign
   def points: Int
   def effects: Set[TrapEffect]
-  def isLegal = Trap.isLegal(kind, effects);
   def movesVictim = effects.filter { effect => effect.isInstanceOf[Move] }.size > 0
   def explodes = effects.contains(Explode)
   def rolls = effects.contains(Roll)
@@ -119,12 +118,6 @@ object Trap {
   case object WallSmash extends TrapSkeleton(15, 1.4, Wall, Elaborate, 70, Set(Move6))
   case object Washbin extends TrapSkeleton(7, 2.4, Ceiling, Humiliating, 90, Set(Move1, Enraging))
   case object WonderBalloon extends TrapSkeleton(10, 0.8, Floor, Humiliating, 65, Set(Bind))
-
-  def isLegal(typ: TrapType, effects: Set[TrapEffect]) = {
-    def hasSlideEffect = effects.filter(_.isInstanceOf[TrapEffect.Slide]).size > 0
-    def isWall = typ == TrapType.Wall
-    !(hasSlideEffect && !isWall)
-  }
 
   sealed abstract class TrapSkeleton(val damage: Int,
                                      val multiplier: BigDecimal,

@@ -118,14 +118,10 @@ case object Combo {
       }
     }
 
-    return true;
+    return true
   }
 
   def isFeasible(traps: Seq[Trap]): Boolean = {
-
-    def allTrapsLegal = traps.filter { !_.isLegal }.isEmpty
-
-    def onlyOnce = traps.distinct.size == traps.size
 
     // TODO: slows down a lot
     def allPairsValid = traps
@@ -137,7 +133,7 @@ case object Combo {
       }
       .isEmpty
 
-    allTrapsLegal //&& allPairsValid
+    allPairsValid
   }
 
   def isFeasible(combo: Combo): Boolean = isFeasible(combo.hits.map { hit => hit.trap });
