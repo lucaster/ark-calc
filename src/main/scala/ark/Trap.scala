@@ -1,22 +1,10 @@
 package ark
 
+import scala.math.BigDecimal.double2bigDecimal
+
 import TrapAlign._
 import TrapEffect._
 import TrapType._
-import javafx.scene.shape.MoveTo
-
-sealed trait Trap {
-  def damage: Int
-  def multiplier: BigDecimal
-  def kind: TrapType
-  def align: TrapAlign
-  def points: Int
-  def effects: Set[TrapEffect]
-  def movesVictim = effects.filter { effect => effect.isInstanceOf[Move] }.size > 0
-  def explodes = effects.contains(Explode)
-  def rolls = effects.contains(Roll)
-  def isProjectile = effects.contains(Projectile)
-}
 
 object Trap {
   case object AcidSlime extends TrapSkeleton(15, 1.6, Ceiling, Humiliating, 60, Set(Bind, ForcedArmorBreak))
@@ -118,14 +106,6 @@ object Trap {
   case object Washbin extends TrapSkeleton(7, 2.4, Ceiling, Humiliating, 90, Set(Move1, Enraging))
   case object WonderBalloon extends TrapSkeleton(10, 0.8, Floor, Humiliating, 65, Set(Bind))
 
-  sealed abstract class TrapSkeleton(val damage: Int,
-                                     val multiplier: BigDecimal,
-                                     val kind: TrapType,
-                                     val align: TrapAlign,
-                                     val points: Int,
-                                     val effects: Set[TrapEffect] = Set.empty) extends Trap {
-  }
-
   val values = Set(
     AcidSlime,
     AgonyMask,
@@ -224,5 +204,25 @@ object Trap {
     WallNudge,
     WallSmash,
     Washbin,
-    WonderBalloon);
+    WonderBalloon)
+}
+
+sealed abstract class TrapSkeleton(val damage: Int,
+                                   val multiplier: BigDecimal,
+                                   val kind: TrapType,
+                                   val align: TrapAlign,
+                                   val points: Int,
+                                   val effects: Set[TrapEffect] = Set.empty) extends Trap
+
+sealed trait Trap {
+  def damage: Int
+  def multiplier: BigDecimal
+  def kind: TrapType
+  def align: TrapAlign
+  def points: Int
+  def effects: Set[TrapEffect]
+  def movesVictim = effects.filter { effect => effect.isInstanceOf[Move] }.size > 0
+  def explodes = effects.contains(Explode)
+  def rolls = effects.contains(Roll)
+  def isProjectile = effects.contains(Projectile)
 }
