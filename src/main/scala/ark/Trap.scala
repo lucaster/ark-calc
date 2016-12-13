@@ -19,7 +19,6 @@ sealed trait Trap {
 }
 
 object Trap {
-
   case object AcidSlime extends TrapSkeleton(15, 1.6, Ceiling, Humiliating, 60, Set(Bind, ForcedArmorBreak))
   case object AgonyMask extends TrapSkeleton(45, 0.9, Ceiling, Sadistic, 95, Set(Move2, Electric))
   case object Aldebaran extends TrapSkeleton(1, 2.0, Ceiling, Sadistic, 60, Set(Berserk))
@@ -128,6 +127,7 @@ object Trap {
   }
 
   val values = Set(
+    AcidSlime,
     AgonyMask,
     Aldebaran,
     ArrowSlit,
@@ -141,6 +141,7 @@ object Trap {
     BloodyScissors,
     Boulder,
     BrutalBuzzsaw,
+    Bubblehead,
     Buzzsaw,
     CageBall,
     Cakeintheface,
@@ -152,16 +153,22 @@ object Trap {
     DeltaHorse,
     DeltaHorseRodeo,
     EvilPunch,
+    EvilSmash,
     EvilStomp,
     EvilStrike,
     Fireball,
     FlamingBoulder,
     Flypaper,
+    FlySwatter,
     FountainToilet,
+    FrozenClaw,
     FrozenArrow,
     GatlingArrow,
+    GenocideEye,
     HangingChains,
     Hellfire,
+    HellsJudjement,
+    HellLaser,
     HorseHead,
     Hotplate,
     HumanCannon,
@@ -171,6 +178,7 @@ object Trap {
     Launchpad,
     LethalLance,
     LightningSpear,
+    KillerTop,
     MagnifyingGlass,
     MaidensEmbrace,
     Mallet,
@@ -178,10 +186,15 @@ object Trap {
     MovingChair,
     NastyNeedle,
     NerveGas,
+    NightmareHeel,
     OilBottle,
+    OilPress,
+    PaperFan,
     Pillory,
     PumpkinMask,
+    RailHook,
     ReapersScythe,
+    RodeoHorseJet,
     RollingBomb,
     ScreamFace,
     SharkBlade,
@@ -192,10 +205,14 @@ object Trap {
     SpikedBall,
     Springboard,
     StickyArrow,
+    StrayTrapDog,
+    Suezo,
     SuperSpringboard,
+    SuspendedCeiling,
     SwingingAnchor,
     SwingingAxe,
     SwingingHammer,
+    Syringe,
     Tombstone,
     TortureWheel,
     TrapDog,
