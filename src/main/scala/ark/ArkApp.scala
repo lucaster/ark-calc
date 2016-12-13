@@ -6,11 +6,13 @@ import scala.math.BigDecimal.int2bigDecimal
 
 import rx.lang.scala.Observable
 
-import ark.Trap._
-
 object ArkApp extends App {
+
+  val a = ark.enums.Trap.AcidSlime
+  val v = ark.enums.Trap.values()
+
   time({
-    val traps = Trap.values
+    val traps = Traps.values
       .filter { !_.explodes }
       //.filter { !_.isProjectile }
       //.filter { !_.rolls }

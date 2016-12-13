@@ -2,7 +2,7 @@ package ark
 
 import org.scalatest.Assertions._
 import org.scalatest.FunSpec
-import ark.Trap._
+import ark.Traps._
 
 class TwoComboSpec extends FunSpec {
 

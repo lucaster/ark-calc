@@ -2,7 +2,7 @@ package ark
 
 import org.scalatest.Assertions._
 import org.scalatest.FunSpec
-import ark.Trap._
+import ark.Traps._
 
 class OneComboSpec extends FunSpec {
 
@@ -14,7 +14,7 @@ class OneComboSpec extends FunSpec {
     it("has one hit") {
       assert(1 === combo.hits.size);
     }
-    
+
     it("has the hit's ark") {
       assert(combo.ark === hit.damage * (hit.baseMultiplier + hit.bonusMultiplier));
     }

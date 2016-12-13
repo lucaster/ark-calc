@@ -2,7 +2,7 @@ package ark
 
 import org.scalatest.Assertions
 import org.scalatest.FunSpec
-import ark.Trap._
+import ark.Traps._
 
 class JapaneseComboSpec extends FunSpec {
 

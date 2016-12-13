@@ -2,7 +2,7 @@ package ark
 
 import org.scalatest.Assertions._
 import org.scalatest.FunSpec
-import ark.Trap._
+import ark.Traps._
 import scala.util.Random
 
 class SomeComboSpec extends FunSpec {
