@@ -10,15 +10,17 @@ import ark.Trap._
 
 object ArkApp extends App {
   time({
-    val traps = (Trap.values
+    val traps = Trap.values
       .filter { !_.explodes }
       //.filter { !_.isProjectile }
       //.filter { !_.rolls }
       //.filter { _.movesVictim }
       //.-(ChurchBell, Claw, MagnifyingGlass)
-      .toSeq)
+      .toSeq
+      .sortBy(r => (-r.multiplier, r.points))
+      .toArray
     val trapNum = 7
-    val minArk = 1000
+    val minArk = 5000
     val minElaborate = 3000
     val minHumiliating = 3000
     val minSadistic = 3000
