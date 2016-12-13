@@ -6,6 +6,12 @@ import TrapAlign._
 import TrapEffect._
 import TrapType._
 
+/**
+ * Not trait's object companion, better for Java interop:
+ * + Works almost like an enum. Es: Traps.AcidSlime()
+ * + Because values aren't case objects, they don't turn into (undesirably) instantiable classes and are immutable final
+ * - The type of values is the trait, not the enclosing object
+ */
 object Traps {
   val AcidSlime = TrapSkeleton(15, 1.6, Ceiling, Humiliating, 60, Set(Bind, ForcedArmorBreak))
   val AgonyMask = TrapSkeleton(45, 0.9, Ceiling, Sadistic, 95, Set(Move2, Electric))
