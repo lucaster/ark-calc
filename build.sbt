@@ -12,5 +12,8 @@ libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.6"
 libraryDependencies += "io.reactivex" %% "rxscala" % "0.26.4"
 libraryDependencies += "org.optaplanner" % "optaplanner-core" % "6.5.0.Final"
 
-//resolvers += "Sonatype Public" at "https://oss.sonatype.org/content/repositories/public"
-//resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+// Do not append Scala versions to the generated artifacts
+//crossPaths := false
+
+// This forbids including Scala related libraries into the dependency
+//autoScalaLibrary := false
