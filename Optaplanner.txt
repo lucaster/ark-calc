@@ -1,0 +1,26 @@
+@PlanningSolution Combo
+@PlanningEntityCollectionProperty Combo.hits
+@PlanningEntity Hit
+@PlanningVariable Hit.trap
+
+Hard constraints:
+- Combo.hits.size <= l
+
+Medium constraints:
+- Combo.a >= a
+- Combo.e >= e
+- Combo.s >= s
+- Combo.h >= h
+
+Soft constraints:
+- Each hit uses a different trap: Combo.hits.distinct(_.trap).size = Combo.hits.size
+
+Objectives:
+- Maximize Combo.a
+- Maximize Combo.e
+- Maximize Combo.s
+- Maximize Combo.h
+- Minimize Combo.hits.size
+
+Score function:
+- f(Combo) = f(g(Combo.a), h(Combo.e), i(Combo.s), q(Combo.h), w(Combo.hits))
