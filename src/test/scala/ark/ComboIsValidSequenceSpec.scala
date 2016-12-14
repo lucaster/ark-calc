@@ -2,7 +2,7 @@ package ark
 
 import org.scalatest.FunSpec
 
-import ark.Traps._
+import ark.Trap._
 import ark.TrapEffect._
 import ark.TrapType._
 

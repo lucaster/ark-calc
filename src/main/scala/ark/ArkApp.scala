@@ -12,7 +12,7 @@ object ArkApp extends App {
   val v = ark.enums.Trap.values()
 
   time({
-    val traps = Traps.values
+    val traps = Trap.values
       .filter { !_.explodes }
       //.filter { !_.isProjectile }
       //.filter { !_.rolls }

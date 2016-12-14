@@ -1,7 +1,7 @@
 package ark
 
 import org.scalatest.FunSpec
-import ark.Traps._
+import ark.Trap._
 
 class SubsetsTest extends FunSpec {
 

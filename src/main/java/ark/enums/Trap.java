@@ -23,6 +23,7 @@ public enum Trap {
 
 	@SafeVarargs
 	final private static <T> Set<T> setOf(final T... things) {
+		final ark.Trap a = ark.Trap.AcidSlime();
 		return new HashSet<T>(Arrays.asList(things));
 	}
 

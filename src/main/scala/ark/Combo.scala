@@ -2,7 +2,7 @@ package ark
 
 import scala.math.BigDecimal.int2bigDecimal
 
-import ark.Traps._
+import ark.Trap._
 import ark.TrapType._
 import ark.TrapAlign._
 import ark.TrapEffect._
