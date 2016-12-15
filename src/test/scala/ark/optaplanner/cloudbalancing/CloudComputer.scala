@@ -8,5 +8,4 @@ case class CloudComputer(@BeanProperty var cpuPower: Int,
                          @BeanProperty var cost: Int) {
 
   def this() = this(0, 0, 0, 0)
-
 }

@@ -1,18 +1,15 @@
 package ark.optaplanner.cloudbalancing
 
-import java.util.Collection
-import org.optaplanner.core.api.domain.solution.Solution
-import org.optaplanner.core.api.score.AbstractScore
-import org.optaplanner.core.api.score.Score
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore
 import org.optaplanner.core.api.solver.SolverFactory
 import org.scalatest.FunSpec
 
 class OptaTest extends FunSpec {
 
+  var score: HardSoftScore = _
+
   describe("a") {
     it("a") {
-
-      val c = new CloudComputer()
 
       val res = "cloudBalancingSolverConfig.xml"
       val solverFactory = SolverFactory.createFromXmlResource[CloudBalance](res)
