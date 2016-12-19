@@ -12,7 +12,7 @@ import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore
 
 @PlanningSolution
-class CloudBalance extends Solution[HardSoftScore] {
+case class CloudBalance() extends Solution[HardSoftScore] {
 
   /**
    * List of @PlanningVariable, as indicated in the @PlanningEntity
@@ -28,13 +28,9 @@ class CloudBalance extends Solution[HardSoftScore] {
   @BeanProperty
   var score: HardSoftScore = _
 
-  // ************************************************************************
-  // Complex methods
-  // ************************************************************************
-
   /**
    * The getProblemFacts() method is only needed for score calculation with Drools.
    * It is not needed for the other score calculation types.
    */
-  override def getProblemFacts: Collection[_] = new ArrayList[Object](computerList);
+  override def getProblemFacts: Collection[_] = new ArrayList[CloudComputer](computerList);
 }

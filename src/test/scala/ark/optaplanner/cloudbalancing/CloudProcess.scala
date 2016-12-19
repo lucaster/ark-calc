@@ -6,10 +6,10 @@ import org.optaplanner.core.api.domain.variable.PlanningVariable
 import scala.beans.BeanProperty
 
 @PlanningEntity
-class CloudProcess(@BeanProperty var requiredCpuPower: Int,
-                   @BeanProperty var requiredMemory: Int,
-                   @BeanProperty var requiredNetworkBandwidth: Int,
-                   val com: CloudComputer) {
+case class CloudProcess(@BeanProperty var requiredCpuPower: Int,
+                        @BeanProperty var requiredMemory: Int,
+                        @BeanProperty var requiredNetworkBandwidth: Int,
+                        val com: CloudComputer) {
 
   setCloudComputer(com)
 
