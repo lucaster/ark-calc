@@ -18,7 +18,7 @@ class CloudBalancingGenerator {
 
   def createCloudBalance(inputId: String, computerListSize: Int, processListSize: Int): CloudBalance = {
     random = new Random(47)
-    val cloudBalance: CloudBalance = new CloudBalance
+    val cloudBalance = new CloudBalance
     // cloudBalance.setId(inputId)
     cloudBalance.setComputerList(createComputerList(computerListSize))
     cloudBalance.setProcessList(createProcessList(processListSize))

@@ -14,8 +14,7 @@ Medium constraints:
 
 Soft constraints:
 - Each hit uses a different trap: Combo.hits.distinct(_.trap).size = Combo.hits.size
-
-Objectives:
+- Minimize bonus miltipliers
 - Maximize Combo.a
 - Maximize Combo.e
 - Maximize Combo.s
