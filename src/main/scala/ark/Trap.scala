@@ -38,7 +38,7 @@ object Trap {
   val Bubblehead = Trap("Bubblehead", 5, 1.1, Floor, Elaborate, 55, Set(Bind, Movable))
   val Buzzsaw = Trap("Buzzsaw", 35, 0.8, Ceiling, Sadistic, 50, Set(Move2))
   val CageBall = Trap("CageBall", 10, 1.2, Ceiling, Elaborate, 90, Set(Roll, Move1))
-  val Cakeintheface = Trap("Cakeintheface", 1, 2.0, Wall, Humiliating, 95, Set(Projectile, Move3))
+  val CakeintheFace = Trap("CakeintheFace", 1, 2.0, Wall, Humiliating, 95, Set(Projectile, Move3))
   val ChangingRoom = Trap("ChangingRoom", 5, 1.7, Wall, Humiliating, 55, Set(ForcedArmorBreak))
   val ChurchBell = Trap("ChurchBell", 50, 1.5, Ceiling, Elaborate, 75)
   val CircularSaw = Trap("CircularSaw", 10, 0.5, Ceiling, Sadistic, 75, Set(StageHit4, Move2))
@@ -138,7 +138,7 @@ object Trap {
     Bubblehead,
     Buzzsaw,
     CageBall,
-    Cakeintheface,
+    CakeintheFace,
     ChangingRoom,
     ChurchBell,
     CircularSaw,

@@ -31,8 +31,6 @@ case object Combo {
    */
   def scores(combo: Combo) = {
 
-    case class Scores(elaborate: Int, sadistic: Int, humiliating: Int, ark: Int)
-
     var hasElaborate, hasSadistic, hasHumiliating = false
     var elaborate, sadistic, humiliating = 0
     var cumulativeElaborate, cumulativeSadistic, cumulativeHumiliating = 0
@@ -106,7 +104,13 @@ case object Combo {
 
     val ark = Combo.ark(combo.hits)
 
-    Scores(elaborate, sadistic, humiliating, ark)
+    case class Score(ark: Int, elaborate: Int, sadistic: Int, humiliating: Int) {
+      override def toString = {
+        s"Score(ark: ${ark}, elaborate: ${elaborate}, sadistic: ${sadistic}, humiliating: ${humiliating})"
+      }
+    }
+
+    Score(ark, elaborate, sadistic, humiliating)
   }
 
   def isValidSequence(trap1: Trap, trap2: Trap): Boolean = {

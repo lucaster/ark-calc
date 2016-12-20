@@ -1,24 +1,20 @@
 package ark
 
-import org.scalatest.Assertions._
-import org.scalatest.FunSpec
+import org.scalatest._
+
 import ark.Trap._
-import scala.util.Random
 
 class SomeComboSpec extends FunSpec {
 
   describe("A n x Combo") {
 
-    val comboSize = 1;
+    val combo = Combo(Seq(ArrowSlit, MagnifyingGlass, ArrowSlit, Washbin, Aldebaran, Washbin, Washbin).map { new Hit(_) })
 
-    it("") {
-      /*Trap.values.toStream
-      .permutations
-      .filter { perm => perm.size <= comboSize }
-      .filter { perm => perm.filterNot { t => t.isLegal }.isEmpty }
-      .map { traps => Combo(traps.toList map { trap => Hit(trap) }) }
-      *
-      */
+    it("Has scores") {
+      assert(combo.ark === 1267)
+      assert(combo.elaborate === 15632)
+      assert(combo.sadistic === 672)
+      assert(combo.humiliating === 3456)
     }
   }
 }

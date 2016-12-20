@@ -24,15 +24,17 @@ class ComboEasyScoreCalculator extends EasyScoreCalculator[Combo] {
   }
 
   private def hardScore(combo: Combo): Int = {
-    maxHitNum - combo.getHitList.size
+    // Minimize combo length
+    maxHitNum - combo.getHitList.size - { if (Util.toArkCombo(combo).isFeasible) 0 else combo.getHitList.size }
   }
 
   private def softScore(combo: Combo): Int = {
+    // Mazimize scores
     val c = Util.toArkCombo(combo)
     val a = c.ark
     val e = c.elaborate
     val s = c.sadistic
     val h = c.humiliating
-    a + e + s + h - minA - minE - minS - minH
+    Set(a - minA, e - minE, s - minS, h - minH).min
   }
 }

@@ -9,14 +9,20 @@ import org.optaplanner.core.api.domain.variable.PlanningVariable
 import ark.Trap
 
 @PlanningEntity
-case class Hit(val t: Trap,
-               @BeanProperty var bonusMultiplier: BigDecimal) {
+case class Hit() {
 
-  setTrap(t);
-
-  def this() = this(null, 0)
+  def this(trap: Trap, bonusMultiplier: BigDecimal) = {
+    this()
+    this.trap = trap
+    this.bonusMultiplier = bonusMultiplier
+  }
 
   @BeanProperty
+  var bonusMultiplier: BigDecimal = 0.0
+
   @PlanningVariable(valueRangeProviderRefs = Array("trapRange"))
+  @BeanProperty
   var trap: Trap = _
+
+  override def toString = s"(${trap.name}, $bonusMultiplier)"
 }

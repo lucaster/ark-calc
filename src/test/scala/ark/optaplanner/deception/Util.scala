@@ -5,15 +5,12 @@ import scala.collection.JavaConverters._
 import scala.collection.JavaConversions
 import scala.collection.JavaConversions._
 
-import ark.Trap
-
 object Util {
   def toArkCombo(combo: Combo) = {
-    val hits = combo
+    ark.Combo(combo
       .getHitList
       .map { _.trap }
-      .flatMap(Option[Trap]) // exclude nulls
-      .map { trap => ark.Hit(trap) }
-    ark.Combo(hits)
+      .flatMap { Option[ark.Trap] }
+      .map { new ark.Hit(_) })
   }
 }

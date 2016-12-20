@@ -5,6 +5,8 @@ import java.util.Collection
 
 import scala.beans.BeanProperty
 
+import scala.collection.JavaConversions._
+
 import org.optaplanner.core.api.domain.entity.PlanningEntity
 import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty
 import org.optaplanner.core.api.domain.solution.PlanningSolution
@@ -38,4 +40,6 @@ case class Combo() extends Solution[HardSoftScore] {
    * It is not needed for the other score calculation types.
    */
   override def getProblemFacts: Collection[_] = new ArrayList[Trap](trapList);
+
+  override def toString = hitList.mkString
 }
