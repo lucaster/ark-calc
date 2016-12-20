@@ -1,6 +1,9 @@
 package ark.optaplanner.cloudbalancing
 
-import scala.collection.JavaConverters.asScalaBufferConverter
+import scala.collection.JavaConverters
+import scala.collection.JavaConverters._
+import scala.collection.JavaConversions
+import scala.collection.JavaConversions._
 
 import org.optaplanner.core.api.domain.solution.PlanningSolution
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore
@@ -24,7 +27,7 @@ class OptaTest extends FunSpec {
       println(s"\nSolved cloudBalance with ${comNum} computers and ${procNum} processes:\n${toDisplayString(solvedCloudBalance)}")
       println(s"Score: ${solvedCloudBalance.getScore}")
       def toDisplayString(cloudBalance: CloudBalance) = {
-        cloudBalance.getProcessList.asScala
+        cloudBalance.getProcessList
           .map { process =>
             s"${process} -> ${process.getCloudComputer}"
           }

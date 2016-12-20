@@ -51,7 +51,7 @@ object ArkApp extends App {
   })
 
   def print(combo: Combo) =
-    println(s"a${combo.ark} e${combo.elaborate} s${combo.sadistic} h${combo.humiliating} ${combo.mkString}")
+    println(s"a${combo.ark} e${combo.elaborate} s${combo.sadistic} h${combo.humiliating} ${combo}")
 
   def time[R](block: => R): R = {
     val t0 = System.nanoTime()

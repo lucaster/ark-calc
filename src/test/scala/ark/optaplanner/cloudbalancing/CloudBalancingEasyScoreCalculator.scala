@@ -1,6 +1,9 @@
 package ark.optaplanner.cloudbalancing
 
+import scala.collection.JavaConverters
 import scala.collection.JavaConverters._
+import scala.collection.JavaConversions
+import scala.collection.JavaConversions._
 
 import org.optaplanner.core.api.domain.entity.PlanningEntity
 import org.optaplanner.core.api.domain.solution.PlanningSolution
@@ -20,7 +23,7 @@ class CloudBalancingEasyScoreCalculator extends EasyScoreCalculator[CloudBalance
     var softScore = 0
 
     // For each computer
-    for (computer <- cloudBalance.getComputerList.asScala) {
+    for (computer <- cloudBalance.getComputerList) {
 
       var cpuPowerUsage = 0
       var memoryUsage = 0
@@ -28,7 +31,7 @@ class CloudBalancingEasyScoreCalculator extends EasyScoreCalculator[CloudBalance
       var used = false
 
       // For each process on that computer:
-      for (process <- cloudBalance.getProcessList.asScala if (process.getCloudComputer == computer)) {
+      for (process <- cloudBalance.getProcessList if (process.getCloudComputer == computer)) {
         // The computer's resources get used up:
         cpuPowerUsage += process.getRequiredCpuPower
         memoryUsage += process.getRequiredMemory

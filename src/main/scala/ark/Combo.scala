@@ -9,25 +9,29 @@ import ark.TrapEffect._
 import scala.math.ScalaNumber
 
 case class Combo(val hits: Seq[Hit] = Nil) {
+  lazy val scores = Combo.scores(this)
   def ark = scores.ark
   def elaborate = scores.elaborate
   def humiliating = scores.humiliating
   def sadistic = scores.sadistic
   def isFeasible = Combo.isFeasible(this);
-  def mkString = hits map { hit => s"(${hit.trap}, ${hit.bonusMultiplier})" } mkString
-  private[this] lazy val scores = Combo.scores(this)
+  override def toString = hits map { hit => s"(${hit.trap.name}, ${hit.bonusMultiplier})" } mkString
 }
 
 case object Combo {
 
-  def ark(hits: Traversable[Hit]) = (hits.map { _.damage }.sum * hits.map { _.multiplier }.sum).toInt
+  def ark(hits: Traversable[Hit]) = {
+    val uniqueHits = hits.groupBy { _.trap }.map { _._2.head }
+    val bdArk = uniqueHits.map { _.damage }.sum * uniqueHits.map { _.multiplier }.sum
+    bdArk.toInt
+  }
 
   /**
    * http://www7b.biglobe.ne.jp/~utherpendragon/kagero3.html
    */
   def scores(combo: Combo) = {
 
-    case class Scores(elaborate: BigDecimal, sadistic: BigDecimal, humiliating: BigDecimal, ark: BigDecimal)
+    case class Scores(elaborate: Int, sadistic: Int, humiliating: Int, ark: Int)
 
     var hasElaborate, hasSadistic, hasHumiliating = false
     var elaborate, sadistic, humiliating = 0

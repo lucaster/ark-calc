@@ -17,6 +17,8 @@ import ark.Trap
 @PlanningSolution
 case class Combo() extends Solution[HardSoftScore] {
 
+  // TODO: place here hard constraints
+
   /**
    * List of @PlanningVariable, as indicated in the @PlanningEntity
    */

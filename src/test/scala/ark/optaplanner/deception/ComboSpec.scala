@@ -1,5 +1,8 @@
 package ark.optaplanner.deception
-import scala.collection.JavaConverters.asScalaBufferConverter
+import scala.collection.JavaConverters
+import scala.collection.JavaConverters._
+import scala.collection.JavaConversions
+import scala.collection.JavaConversions._
 import org.scalatest.Finders
 import org.scalatest.FunSpec
 import org.optaplanner.core.api.solver.SolverFactory
@@ -14,25 +17,15 @@ class ComboSpec extends FunSpec with BeforeAndAfter {
     val traps = Trap.values
     val hitNum = 12
 
-    it("hook") {
-
-    }
-
     it("exists") {
       val solver = SolverFactory.createFromXmlResource[Combo](res).buildSolver()
       val unsolvedCombo = new ComboGenerator().createCombo(traps, hitNum)
       val solvedCombo = solver.solve(unsolvedCombo)
 
-      println(s"\nSolved combo with ${traps.size} traps and ${hitNum} hits:\n${toDisplayString(solvedCombo)}")
+      println(s"\nSolved combo with ${traps.size} traps and ${hitNum} hits:\n${Util.toArkCombo(solvedCombo)}")
       println(s"Score: ${solvedCombo.getScore}")
+      println(s"Scores: ${Util.toArkCombo(solvedCombo).scores}")
 
-      def toDisplayString(combo: Combo) = {
-        combo.getHitList.asScala
-          .map { hit =>
-            s"${hit} -> ${hit.getTrap} ${hit.getBonusMultiplier}"
-          }
-          .mkString("\n")
-      }
     }
 
     it(s"has ${hitNum} hits") {

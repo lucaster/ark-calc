@@ -3,8 +3,10 @@ package ark.optaplanner.cloudbalancing
 import java.util.Random
 
 import scala.beans.BeanProperty
-import scala.collection.JavaConverters.asScalaBufferConverter
-import scala.collection.JavaConverters.seqAsJavaListConverter
+import scala.collection.JavaConverters
+import scala.collection.JavaConverters._
+import scala.collection.JavaConversions
+import scala.collection.JavaConversions._
 
 import org.optaplanner.core.api.domain.entity.PlanningEntity
 import org.optaplanner.core.api.domain.solution.PlanningSolution
@@ -41,7 +43,7 @@ class CloudBalancingGenerator {
     var memoryTotal = 0
     var networkBandwidthTotal = 0
 
-    for (computer <- computerList.asScala) {
+    for (computer <- computerList) {
       cpuPowerTotal += computer.getCpuPower
       memoryTotal += computer.getMemory
       networkBandwidthTotal += computer.getNetworkBandwidth
@@ -51,7 +53,7 @@ class CloudBalancingGenerator {
     var requiredMemoryTotal = 0
     var requiredNetworkBandwidthTotal = 0
 
-    for (process <- cloudBalance.getProcessList.asScala) {
+    for (process <- cloudBalance.getProcessList) {
       requiredCpuPowerTotal += process.getRequiredCpuPower
       requiredMemoryTotal += process.getRequiredMemory
       requiredNetworkBandwidthTotal += process.getRequiredNetworkBandwidth
@@ -111,7 +113,7 @@ class CloudBalancingGenerator {
       computer
     }
 
-    (1 to computerListSize).map { _ => createRandomComputer }.asJava
+    (1 to computerListSize).map { _ => createRandomComputer }
   }
 
   private def createProcessList(processListSize: Int) = {
@@ -129,7 +131,7 @@ class CloudBalancingGenerator {
       process
     }
 
-    (1 to processListSize).map { _ => createRandomProcess }.asJava
+    (1 to processListSize).map { _ => createRandomProcess }
   }
 
   private def distortIndex(referenceIndex: Int, length: Int): Int = {
@@ -155,11 +157,11 @@ class CloudBalancingGenerator {
     if (parabolaRandomDouble < 0.0 || parabolaRandomDouble >= 1.0) {
       throw new IllegalArgumentException("Invalid generated parabolaRandomDouble (" + parabolaRandomDouble + ")")
     }
-    val value = (Math.floor(parabolaRandomDouble * maximumValue) + 1).toInt
+    val value = (Math.floor(parabolaRandomDouble * maximumValue) + 1)
     if (value < 1 || value > maximumValue) {
       throw new IllegalArgumentException("Invalid generated value (" + value + ")")
     }
-    value
+    value.toInt
   }
 
   private var random: Random = _
