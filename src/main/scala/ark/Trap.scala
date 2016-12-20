@@ -100,7 +100,7 @@ object Trap {
   val Springboard = Trap("Springboard", 5, 0.7, Floor, Elaborate, 50, Set(Move3))
   val StickyArrow = Trap("StickyArrow", 3, 0.7, Wall, Humiliating, 70, Set(Projectile, MoveToWall))
   val StrayTrapDog = Trap("StrayTrapDog", 30, 0.8, Floor, Humiliating, 60, Set(Move3))
-  val Suezo = Trap("Suezo", 70, 1.0, Ceiling, Humiliating, 50, Set(Roll, Move5))
+  val Suezo = Trap("Suezo", 70, 1.0, Ceiling, Humiliating, 50, Set(Roll, Move5, Explode))
   val SuperSpringboard = Trap("SuperSpringboard", 10, 0.8, Floor, Elaborate, 55, Set(Move6))
   val SuspendedCeiling = Trap("SuspendedCeiling", 45, 1.2, Ceiling, Humiliating, 60, Set(HitsNear, StageHit2))
   val SwingingAnchor = Trap("SwingingAnchor", 35, 0.6, Ceiling, Sadistic, 80, Set(Enveloping))

@@ -15,6 +15,10 @@ class ComboSpec extends FunSpec with BeforeAndAfter {
 
     val res = "comboSolverConfig.xml"
     val traps = Trap.values
+      .filterNot { _.isProjectile }
+      .filterNot { _.explodes }
+      .filter { _.movesVictim }
+      .--(Set(MagnifyingGlass, ChurchBell, ArrowSlit))
     val hitNum = 7
 
     lazy val solved = {
@@ -25,7 +29,6 @@ class ComboSpec extends FunSpec with BeforeAndAfter {
 
     it("exists") {
       println(s"${solved}")
-      println(s"${Util.toArkCombo(solved)}")
       println(s"Score: ${solved.score}")
       println(s"Scores: ${Util.toArkCombo(solved).scores}")
     }
