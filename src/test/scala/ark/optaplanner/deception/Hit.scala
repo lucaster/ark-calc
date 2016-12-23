@@ -24,5 +24,5 @@ case class Hit() {
   @BeanProperty
   var trap: Trap = _
 
-  override def toString = s"(${trap.name}, $bonusMultiplier)"
+  override def toString = s"(${trap.name}${if (bonusMultiplier == 0) "" else s""", ${bonusMultiplier}"""})"
 }

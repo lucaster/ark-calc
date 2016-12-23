@@ -8,4 +8,5 @@ case class Hit(val trap: Trap, val bonusMultiplier: BigDecimal = 0.0) {
   def points = trap.points
   def baseMultiplier = trap.multiplier
   def multiplier = baseMultiplier + bonusMultiplier
+  override def toString = s"(${trap.name}${if (bonusMultiplier == 0) "" else s""", ${bonusMultiplier}"""})"
 }

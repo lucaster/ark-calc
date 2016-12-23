@@ -7,22 +7,27 @@ import org.scalatest.Finders
 import org.scalatest.FunSpec
 import org.optaplanner.core.api.solver.SolverFactory
 import ark.Trap
-import org.scalatest.BeforeAndAfter
 import ark.Trap._
-class ComboSpec extends FunSpec with BeforeAndAfter {
+import ark.TrapType._
+import ark.TrapEffect._
+
+class ComboSpec extends FunSpec {
 
   describe("A Solved Combo") {
 
     val res = "comboSolverConfig.xml"
     val traps = Trap.values
-      .filterNot { _.isProjectile }
       .filterNot { _.explodes }
+      .filterNot { _.rolls }
+      .filterNot { _.isProjectile }
+      .filterNot { _.kind == Ceiling }
+      .filterNot { _.effects.contains(MoveToWall) }
       .filter { _.movesVictim }
-      .--(Set(MagnifyingGlass, ChurchBell, ArrowSlit))
+
     val hitNum = 7
 
     lazy val solved = {
-      val solver = SolverFactory.createFromXmlResource[Combo](res).buildSolver()
+      val solver = SolverFactory.createFromXmlResource[Combo](res, getClass.getClassLoader).buildSolver()
       val unsolvedCombo = new ComboGenerator().createCombo(traps, hitNum)
       solver.solve(unsolvedCombo)
     }
@@ -33,8 +38,8 @@ class ComboSpec extends FunSpec with BeforeAndAfter {
       println(s"Scores: ${Util.toArkCombo(solved).scores}")
     }
 
-    it(s"has ${hitNum} hits") {
-      assert(solved.getHitList.size == hitNum)
+    it(s"has max ${hitNum} hits") {
+      assert(solved.getHitList.size <= hitNum)
     }
 
     it("has correct scores") {

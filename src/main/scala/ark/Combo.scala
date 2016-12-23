@@ -144,5 +144,5 @@ case object Combo {
     allPairsValid
   }
 
-  def isFeasible(combo: Combo): Boolean = isFeasible(combo.hits.map { hit => hit.trap });
+  def isFeasible(combo: Combo): Boolean = isFeasible(combo.hits.map { _.trap });
 }

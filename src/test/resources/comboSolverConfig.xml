@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solver>
-	<!--<environmentMode>FAST_ASSERT</environmentMode> -->
+<!-- 	<environmentMode>FAST_ASSERT</environmentMode> -->
 
 	<!-- Domain model configuration -->
 	<scanAnnotatedClasses>
@@ -18,22 +18,23 @@
 	<termination>
 		<secondsSpentLimit>30</secondsSpentLimit>
 	</termination>
+
 	<!-- Power tweaked optimization algorithms configuration -->
-	<!--<constructionHeuristic> -->
-	<!--<constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType> -->
-	<!--</constructionHeuristic> -->
-	<!--<localSearch> -->
-	<!--<unionMoveSelector> -->
-	<!--<changeMoveSelector/> -->
-	<!--<swapMoveSelector/> -->
-	<!--<pillarChangeMoveSelector/> -->
-	<!--<pillarSwapMoveSelector/> -->
-	<!--</unionMoveSelector> -->
-	<!--<acceptor> -->
-	<!--<entityTabuSize>7</entityTabuSize> -->
-	<!--</acceptor> -->
-	<!--<forager> -->
-	<!--<acceptedCountLimit>1000</acceptedCountLimit> -->
-	<!--</forager> -->
-	<!--</localSearch> -->
+<!-- 	<constructionHeuristic> -->
+<!-- 		<constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType> -->
+<!-- 	</constructionHeuristic> -->
+<!-- 	<localSearch> -->
+<!-- 		<unionMoveSelector> -->
+<!-- 			<changeMoveSelector /> -->
+<!-- 			<swapMoveSelector /> -->
+<!-- 			<pillarChangeMoveSelector /> -->
+<!-- 			<pillarSwapMoveSelector /> -->
+<!-- 		</unionMoveSelector> -->
+<!-- 		<acceptor> -->
+<!-- 			<entityTabuSize>7</entityTabuSize> -->
+<!-- 		</acceptor> -->
+<!-- 		<forager> -->
+<!-- 			<acceptedCountLimit>1000</acceptedCountLimit> -->
+<!-- 		</forager> -->
+<!-- 	</localSearch> -->
 </solver>
