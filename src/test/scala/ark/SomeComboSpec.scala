@@ -11,10 +11,10 @@ class SomeComboSpec extends FunSpec {
     val combo = Combo(Seq(ArrowSlit, MagnifyingGlass, ArrowSlit, Washbin, Aldebaran, Washbin, Washbin).map { new Hit(_) })
 
     it("Has scores") {
-      assert(combo.ark === 1267)
-      assert(combo.elaborate === 15632)
+      assert(combo.ark === 635)
+      assert(combo.elaborate === 1972)
       assert(combo.sadistic === 672)
-      assert(combo.humiliating === 3456)
+      assert(combo.humiliating === 4320)
     }
   }
 }

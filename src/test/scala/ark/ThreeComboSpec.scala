@@ -16,8 +16,8 @@ class ThreeComboSpec extends FunSpec {
       assert(3 === combo.hits.size);
     }
 
-    it("has 36 ark") {
-      assert(combo.ark === 36);
+    it("has 4 ark") {
+      assert(combo.ark === 4);
     }
   }
 }

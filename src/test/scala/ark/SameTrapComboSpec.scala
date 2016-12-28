@@ -9,8 +9,8 @@ class SameTrapComboSpec extends FunSpec {
   describe("A n x (Trap) combo") {
 
     val n = 15;
-
-    val hits = (1 to n).toList.map(_ => new Hit(Springboard, 0.1));
+    val trap = Springboard
+    val hits = (1 to n).toList.map(_ => new Hit(trap, 0.1));
 
     val combo = new Combo(hits);
 
@@ -18,8 +18,8 @@ class SameTrapComboSpec extends FunSpec {
       assert(n === combo.hits.size);
     }
 
-    it("has ark = ???") {
-      ???
+    it("has ark = damage*multiplier") {
+      assert(combo.ark === combo.hits.head.damage * combo.hits.head.multiplier)
     }
   }
 }
