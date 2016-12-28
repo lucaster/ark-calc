@@ -1,24 +1,49 @@
 package ark
 
 import org.scalatest.FunSpec
+import scala.annotation.tailrec
 
 class FeasibleComboGeneratorSpec extends FunSpec {
 
-  class ComboGenerator(val traps: Set[Trap]) {
-    def stream(length: Int): Stream[Combo] = Stream[Combo](new Combo)
+  class ComboGenerator(traps: Set[Trap]) {
+
+    def stream(length: Int): Stream[Combo] = {
+
+      def expand(combo: Combo, candidates: Set[Trap]) =
+        candidates
+          .map { trap => (combo + trap, candidates - trap) }
+          .filter { _._1.isFeasible }
+
+      def expandTuple(tuple: (Combo, Set[Trap])) = expand(tuple._1, tuple._2)
+
+      @tailrec
+      def step(state: Stream[(Combo, Set[Trap])], togo: Int): Stream[(Combo, Set[Trap])] = {
+
+        require { togo >= 0 }
+
+        if (togo == 0) {
+          state
+        }
+        else {
+          step(state flatMap expandTuple, togo - 1)
+        }
+      }
+
+      step(Stream((Combo(), traps)), length) map { _._1 }
+    }
   }
 
   describe("A Combo Generator") {
 
-    describe("when given some traps") {
+    val traps = Trap.values
 
-      val traps = Trap.values.take(5)
+    describe(s"when given ${traps.size} traps") {
 
-      def comboGenerator = new ComboGenerator(traps)
+      val length = 3
 
-      describe("and a desired Combo length") {
+      describe(s"and a desired Combo length of ${length}") {
 
-        val length = 7
+        def comboGenerator = new ComboGenerator(traps)
 
         // Act
         val combos = comboGenerator.stream(length)
@@ -33,6 +58,12 @@ class FeasibleComboGeneratorSpec extends FunSpec {
 
         it("produces combos not longer than the given length") {
           assert(combos.filter { _.hits.length > length }.isEmpty)
+        }
+
+        it("produces combos of size min(traps.size, length)") {
+          for (combo <- combos) {
+            assert(combo.hits.size === Math.min(traps.size, length))
+          }
         }
 
         it("produces only feasible combos") {

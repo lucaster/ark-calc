@@ -14,7 +14,8 @@ case class Combo(val hits: Seq[Hit] = Nil) {
   def elaborate = scores.elaborate
   def humiliating = scores.humiliating
   def sadistic = scores.sadistic
-  def isFeasible = Combo.isFeasible(this);
+  def isFeasible = Combo.isFeasible(this)
+  def +(trap: Trap) = copy(hits :+ Hit(trap))
   override def toString = hits map { hit => s"(${hit.trap.name}, ${hit.bonusMultiplier})" } mkString
 }
 
@@ -130,18 +131,11 @@ case object Combo {
   }
 
   def isFeasible(traps: Seq[Trap]): Boolean = {
-
-    // TODO: slows down a lot
-    def allPairsValid = traps
+    traps
       .sliding(2)
-      .collect {
-        case pair => {
-          !isValidSequence(pair(0), pair(1))
-        }
-      }
+      .filter { _.size == 2 }
+      .filter { pair => !isValidSequence(pair(0), pair(1)) }
       .isEmpty
-
-    allPairsValid
   }
 
   def isFeasible(combo: Combo): Boolean = isFeasible(combo.hits.map { _.trap });
