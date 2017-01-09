@@ -9,6 +9,9 @@ import ark.TrapEffect._
 import scala.math.ScalaNumber
 
 case class Combo(val hits: Seq[Hit] = Nil) {
+  // Charge Zero -> no ark
+  // Auto Defense -> half ark, half points
+  // Charge Zero, Auto Defense -> no ark, half points
   lazy val scores = Combo.scores(this)
   def ark = scores.ark
   def elaborate = scores.elaborate
@@ -26,23 +29,23 @@ case object Combo {
    */
   def scores(combo: Combo) = {
 
-    type Scorer = Hit => Int
+    def scoreFor(points: Hit => Int): Int = {
 
-    def scoreFor(scorer: Scorer): Int = {
-
-      case class State(pointSum: Int, multiSum: BigDecimal, score: Int)
+      case class ComboState(pointSum: Int, multiSum: BigDecimal, score: Int) {
+        require(pointSum >= 0)
+        require(multiSum >= 0)
+        require(score >= 0)
+        require(score >= (pointSum * multiSum).toInt)
+      }
 
       combo
         .hits
-        .foldLeft(State(0, 0, 0))((prevState, hit) => {
-          val currPoint = scorer(hit)
-          val currMulti = hit.multiplier
-          val currPointSum = prevState.pointSum + currPoint
-          val currMultiSum = prevState.multiSum + currMulti
+        .foldLeft(ComboState(0, 0, 0))((prevState, hit) => {
+          val currPointSum = prevState.pointSum + points(hit)
+          val currMultiSum = prevState.multiSum + hit.multiplier
           val hitScore = (currPointSum * currMultiSum).toInt
-          val prevScore = prevState.score
-          val currScore = prevScore + hitScore
-          State(currPointSum, currMultiSum, currScore)
+          val currScore = prevState.score + hitScore
+          ComboState(currPointSum, currMultiSum, currScore)
         })
         .score
     }
