@@ -16,7 +16,7 @@
 
 	<!-- Optimization algorithms configuration -->
 	<termination>
-		<secondsSpentLimit>10</secondsSpentLimit>
+		<secondsSpentLimit>30</secondsSpentLimit>
 	</termination>
 
 	<!-- Power tweaked optimization algorithms configuration -->

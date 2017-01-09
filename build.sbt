@@ -11,6 +11,8 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1" % "test"
 libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.6"
 libraryDependencies += "io.reactivex" %% "rxscala" % "0.26.4"
 libraryDependencies += "org.optaplanner" % "optaplanner-core" % "6.5.0.Final"
+libraryDependencies += "org.slf4j" % "slf4j-simple" % "1.7.22"
+
 
 javaHome := sys.env.get("JAVA_HOME") map file
 

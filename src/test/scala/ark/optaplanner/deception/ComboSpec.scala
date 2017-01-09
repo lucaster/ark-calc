@@ -18,10 +18,10 @@ class ComboSpec extends FunSpec {
     val res = "comboSolverConfig.xml"
     val traps = Trap.values
       .filterNot { _.explodes }
-      .filterNot { _.rolls }
-      .filterNot { _.isProjectile }
-      .filterNot { _.kind == Ceiling }
-      .filterNot { _.effects.contains(MoveToWall) }
+      //.filterNot { _.rolls }
+      //.filterNot { _.isProjectile }
+      //.filterNot { _.kind == Ceiling }
+      //.filterNot { _.effects.contains(MoveToWall) }
       .filter { _.movesVictim }
 
     val hitNum = 7
@@ -33,6 +33,7 @@ class ComboSpec extends FunSpec {
     }
 
     it("exists") {
+      println
       println(s"${solved}")
       println(s"Score: ${solved.score}")
       println(s"Scores: ${Util.toArkCombo(solved).scores}")

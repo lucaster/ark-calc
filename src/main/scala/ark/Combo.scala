@@ -131,11 +131,16 @@ case object Combo {
   }
 
   def isFeasible(traps: Seq[Trap]): Boolean = {
-    traps
+
+    def allPairsValid = traps
       .sliding(2)
       .filter { _.size == 2 }
       .filter { pair => !isValidSequence(pair(0), pair(1)) }
       .isEmpty
+
+    // TODO: cannot have same trap twice in a row!
+
+    allPairsValid
   }
 
   def isFeasible(combo: Combo): Boolean = isFeasible(combo.hits.map { _.trap });
