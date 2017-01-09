@@ -21,89 +21,31 @@ case class Combo(val hits: Seq[Hit] = Nil) {
 
 case object Combo {
 
-  def ark(hits: Traversable[Hit]) = {
-    val uniqueHits = hits.groupBy { _.trap }.map { _._2.head }
-    val bdArk = uniqueHits.map { _.damage }.sum * uniqueHits.map { _.multiplier }.sum
-    bdArk.toInt
-  }
-
   /**
-   * http://www7b.biglobe.ne.jp/~utherpendragon/kagero3.html
+   * http://www7b.biglobe.ne.jp/~utherpendragon/kagero3.html IS WRONG
    */
   def scores(combo: Combo) = {
 
-    var hasElaborate, hasSadistic, hasHumiliating = false
-    var elaborate, sadistic, humiliating = 0
-    var cumulativeElaborate, cumulativeSadistic, cumulativeHumiliating = 0
-    var cumulativeMultiplier = BigDecimal(0)
-    var cumulativeElaborateMultipliers, cumulativeSadisticMultipliers, cumulativeHumiliatingMultipliers: Seq[BigDecimal] = Nil
+    type Scorer = Hit => Int
 
-    for { hit <- combo.hits } {
+    def scoreFor(scorer: Scorer): Int = {
 
-      cumulativeMultiplier += hit.multiplier
+      case class State(pointSum: Int, multiSum: BigDecimal, score: Int)
 
-      hit.align match {
-
-        case Elaborate => {
-          elaborate = cumulativeElaborateMultipliers.map { x => (x * cumulativeElaborate).toInt }.sum + ((cumulativeElaborate + hit.points) * cumulativeMultiplier).toInt
-          cumulativeElaborate = (cumulativeElaborate + hit.points)
-          cumulativeElaborateMultipliers = Nil
-          hasElaborate = true
-          if (hasSadistic) {
-            cumulativeSadisticMultipliers match {
-              case Nil            => cumulativeSadisticMultipliers :+= cumulativeMultiplier
-              case (init :+ last) => cumulativeSadisticMultipliers :+= (last + hit.multiplier)
-            }
-          }
-          if (hasHumiliating) {
-            cumulativeHumiliatingMultipliers match {
-              case Nil            => cumulativeHumiliatingMultipliers :+= cumulativeMultiplier
-              case (init :+ last) => cumulativeHumiliatingMultipliers :+= (last + hit.multiplier)
-            }
-          }
-        }
-
-        case Sadistic => {
-          sadistic = cumulativeSadisticMultipliers.map { x => (x * cumulativeSadistic).toInt }.sum + ((cumulativeSadistic + hit.points) * cumulativeMultiplier).toInt
-          cumulativeSadistic = (cumulativeSadistic + hit.points)
-          cumulativeSadisticMultipliers = Nil
-          hasSadistic = true
-          if (hasElaborate) {
-            cumulativeElaborateMultipliers match {
-              case Nil            => cumulativeElaborateMultipliers :+= cumulativeMultiplier
-              case (init :+ last) => cumulativeElaborateMultipliers :+= (last + hit.multiplier)
-            }
-          }
-          if (hasHumiliating) {
-            cumulativeHumiliatingMultipliers match {
-              case Nil            => cumulativeHumiliatingMultipliers :+= cumulativeMultiplier
-              case (init :+ last) => cumulativeHumiliatingMultipliers :+= (last + hit.multiplier)
-            }
-          }
-        }
-
-        case Humiliating => {
-          humiliating = cumulativeHumiliatingMultipliers.map { x => (x * cumulativeHumiliating).toInt }.sum + ((cumulativeHumiliating + hit.points) * cumulativeMultiplier).toInt
-          cumulativeHumiliating = (cumulativeHumiliating + hit.points)
-          cumulativeHumiliatingMultipliers = Nil
-          hasHumiliating = true
-          if (hasSadistic) {
-            cumulativeSadisticMultipliers match {
-              case Nil            => cumulativeSadisticMultipliers :+= cumulativeMultiplier
-              case (init :+ last) => cumulativeSadisticMultipliers :+= (last + hit.multiplier)
-            }
-          }
-          if (hasElaborate) {
-            cumulativeElaborateMultipliers match {
-              case Nil            => cumulativeElaborateMultipliers :+= cumulativeMultiplier
-              case (init :+ last) => cumulativeElaborateMultipliers :+= (last + hit.multiplier)
-            }
-          }
-        }
-      }
+      combo
+        .hits
+        .foldLeft(State(0, 0, 0))((prevState, hit) => {
+          val currPoint = scorer(hit)
+          val currMulti = hit.multiplier
+          val currPointSum = prevState.pointSum + currPoint
+          val currMultiSum = prevState.multiSum + currMulti
+          val hitScore = (currPointSum * currMultiSum).toInt
+          val prevScore = prevState.score
+          val currScore = prevScore + hitScore
+          State(currPointSum, currMultiSum, currScore)
+        })
+        .score
     }
-
-    val ark = Combo.ark(combo.hits)
 
     case class Score(ark: Int, elaborate: Int, sadistic: Int, humiliating: Int) {
       override def toString = {
@@ -111,7 +53,7 @@ case object Combo {
       }
     }
 
-    Score(ark, elaborate, sadistic, humiliating)
+    Score(scoreFor(_.damage), scoreFor(_.elaborate), scoreFor(_.sadistic), scoreFor(_.humiliating))
   }
 
   def isValidSequence(trap1: Trap, trap2: Trap): Boolean = {

@@ -4,17 +4,23 @@ import org.scalatest._
 
 import ark.Trap._
 
-class SomeComboSpec extends FunSpec {
+class FloorSpec extends FunSpec {
 
-  describe("A n x Combo") {
+  describe("BigDecimal 1.9") {
 
-    val combo = Combo(Seq(ArrowSlit, MagnifyingGlass, ArrowSlit, Washbin, Aldebaran, Washbin, Washbin).map { new Hit(_) })
+    val bd = BigDecimal("1.9")
 
-    it("Has scores") {
-      assert(combo.ark === 635)
-      assert(combo.elaborate === 1972)
-      assert(combo.sadistic === 672)
-      assert(combo.humiliating === 4320)
+    it("toInt = 1") {
+      assert(bd.toInt === 1)
+    }
+  }
+
+  describe("Double 1.9") {
+
+    val d = 1.9
+
+    it("toInt = 1") {
+      assert(d.toInt === 1)
     }
   }
 }
