@@ -31,12 +31,18 @@ class ScoreCalculationSpec2b extends ScoreCalculationSpec {
   describeH(Combo(Seq(Hit(BananaPeel))), 130)
   describeH(Combo(Seq(Hit(BananaPeel), Hit(PumpkinMask))), 509)
   describeH(Combo(Seq(Hit(BananaPeel), Hit(PumpkinMask), Hit(Vase))), 509)
-  describeH(Combo(Seq(Hit(BananaPeel), Hit(PumpkinMask), Hit(Vase), Hit(GenocideEye))), 2204)
+  describeH(Combo(Seq(Hit(BananaPeel), Hit(PumpkinMask), Hit(Vase), Hit(GenocideEye))), 509)
   describeH(Combo(Seq(Hit(BananaPeel), Hit(PumpkinMask), Hit(Vase), Hit(GenocideEye), Hit(HorseHead))), 3282)
   describeH(Combo(Seq(Hit(BananaPeel), Hit(PumpkinMask), Hit(Vase), Hit(GenocideEye), Hit(HorseHead), Hit(Tombstone))), 5386)
 }
-class ScoreCalculationSpec3 extends ScoreCalculationSpec {
+/*class ScoreCalculationSpec3 extends ScoreCalculationSpec {
   describeH(Combo(Seq(Hit(BidetToilet))), ???)
   describeH(Combo(Seq(Hit(BidetToilet), Hit(Hotplate))), ???)
   describeH(Combo(Seq(Hit(BidetToilet), Hit(Hotplate), Hit(DeltaHorse))), ???)
+}*/
+class ScoreCalculationSpec4 extends ScoreCalculationSpec {
+  describeH(Combo(Seq(Hit(Vase))), 0)
+  describeH(Combo(Seq(Hit(Vase), Hit(PumpkinMask))), 130)
+  describeH(Combo(Seq(Hit(Vase), Hit(PumpkinMask), Hit(GenocideEye))), 130)
+  describeH(Combo(Seq(Hit(Vase), Hit(PumpkinMask), Hit(GenocideEye), Hit(HorseHead))), 1025)
 }

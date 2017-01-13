@@ -29,23 +29,49 @@ case object Combo {
    */
   def scores(combo: Combo) = {
 
-    def scoreFor(points: Hit => Int): Int = {
+    case class ArkState(pointSum: Int, multiSum: BigDecimal, score: Int) {
+      require(pointSum >= 0)
+      require(multiSum >= 0)
+      require(score >= 0)
+      require(score >= (pointSum * multiSum).toInt)
+    }
 
-      case class ComboState(pointSum: Int, multiSum: BigDecimal, score: Int) {
-        require(pointSum >= 0)
-        require(multiSum >= 0)
-        require(score >= 0)
-        require(score >= (pointSum * multiSum).toInt)
+    val arkScore = combo
+      .hits
+      .foldLeft(ArkState(0, 0, 0))((prevState, hit) => {
+        val pointSum = prevState.pointSum + hit.damage
+        val multiSum = prevState.multiSum + hit.multiplier
+        val hitScore = (pointSum * multiSum).toInt
+        val score = hitScore + prevState.score
+        ArkState(pointSum, multiSum, score)
+      })
+      .score
+
+    def scoreFor(align: TrapAlign): Int = {
+
+      case class PointState(pointSum: Int, multiSum: BigDecimal, awayPointSum: Int, score: Int)
+
+      val points: Hit => Int = align match {
+        case Elaborate   => (hit => hit.elaborate)
+        case Sadistic    => (hit => hit.sadistic)
+        case Humiliating => (hit => hit.humiliating)
       }
 
       combo
         .hits
-        .foldLeft(ComboState(0, 0, 0))((prevState, hit) => {
-          val currPointSum = prevState.pointSum + points(hit)
-          val currMultiSum = prevState.multiSum + hit.multiplier
-          val hitScore = (currPointSum * currMultiSum).toInt
-          val currScore = prevState.score + hitScore
-          ComboState(currPointSum, currMultiSum, currScore)
+        .dropWhile { _.align != align }
+        .foldLeft(PointState(0, 0, 0, 0))((prevState, hit) => {
+          val pointSum = prevState.pointSum + points(hit)
+          val multiSum = prevState.multiSum + hit.multiplier
+          val alignHitScore = (pointSum * multiSum).toInt
+          val hitScore = if (hit.align == align) alignHitScore + prevState.awayPointSum else 0
+          val awayHitScore = if (hit.align == align) 0 else alignHitScore
+          val awayPointSum = if (hit.align == align) 0 else prevState.awayPointSum + awayHitScore
+          val score = hitScore + prevState.score
+          val state = PointState(pointSum, multiSum, awayPointSum, score)
+          def fmt(i: Int) = if (i == 0) "-" else i
+          println(f"${hit.trap.name}%-8s\t${fmt(points(hit))}\t${hit.multiplier}\t${fmt(hitScore)}\t(${awayHitScore})\t[${awayPointSum}]\t${score}")
+          state
         })
         .score
     }
@@ -56,7 +82,7 @@ case object Combo {
       }
     }
 
-    Score(scoreFor(_.damage), scoreFor(_.elaborate), scoreFor(_.sadistic), scoreFor(_.humiliating))
+    Score(arkScore, scoreFor(Elaborate), scoreFor(Sadistic), scoreFor(Humiliating))
   }
 
   def isValidSequence(trap1: Trap, trap2: Trap): Boolean = {
